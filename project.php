@@ -17,13 +17,16 @@ $i = $images->execute();
 $projectName = $p['projectName'];
 $project = $p['projectName'];
 
-//with JS if gallery id = $ add a class
+//with JS if gallery id = $ add a class to sort the img types
 
 ?>
 
 <!doctype html>
 <html>
     <head>
+
+        <!-- NEED TO ADD FAVICONS -->
+
         <title>Cleo Lant - Portfolio | <?php echo($projectName)?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
@@ -79,17 +82,35 @@ $project = $p['projectName'];
     	</header>
     	<main>
     	<div class="container">
-    		<h1>Hi</h1>
+    		<h1><?php echo($projectName)?></h1>
 
     		<div>
-    		<h3>Portfolio</h3>
-    		</div>
+    		<h3>Concept</h3>
+            <p><?php echo($projectConcept)?></p>
+            
+            <h3>Research</h3>
+            <p><?php echo($projectResearch)?></p>
+            
+            <h3>Process</h3>
+            <p><?php echo($projectProcess1)?></p>  
+
+            <?php while() { ?>
+                <img src="img/<?php echo($img['imgFile']);?>" href="<?php echo($img['id']);?>">
+            <?php }?>        
+            
+            <p><?php echo($projectProcess2)?></p>
+            
+            <h3>Results</h3>
+            <p><?php echo($projectResults)?></p>
+    		
+            </div>
     		
     	</div> <!-- end of container -->
     	</main>
     	<footer>
     		
     	</footer>
+        <script type="text/javascript" src="jquery-3.3.1.js"></script>
     	<script type="text/javascript" src="script.js"></script>
     </body>
 </html>

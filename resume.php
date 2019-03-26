@@ -1,25 +1,17 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=lantc_portfolio;charset=utf8mb4";
-$dbusername = "lantc";
-$dbpassword = "NkXHus3h!6V";
+// $dsn = "mysql:host=localhost;dbname=lantc_portfolio;charset=utf8mb4";
+// $dbusername = "lantc";
+// $dbpassword = "NkXHus3h!6V";
 
-$pdo = new PDO($dsn, $dbusername, $dbpassword);
-
-$projects = $pdo->prepare("SELECT * FROM `projects`");
-$images = $pdo->prepare("SELECT * FROM `images` WHERE `featured`='1'");
-
-$p = $projects->execute();
-$backroundimages = $images->execute();
-
-$project = $p['projectName'];
+// $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 ?>
 
 <!doctype html>
 <html>
     <head>
-        <title>Cleo Lant - Visual Designer | Creative Problem-Solver</title>
+        <title>Cleo Lant - Portfolio | <?php echo($projectName)?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
         <!-- <link rel="shortcut icon" href="images/profile_icon.ico" type="image/x-icon" /> -->
@@ -70,54 +62,21 @@ $project = $p['projectName'];
     </head> 
     <body>
     	<header>
-    		<nav>
-    			<!-- hamburger meun icon -->
-    		</nav>
+    		<nav></nav>
     	</header>
     	<main>
     	<div class="container">
-    		<!-- JS on click even using this and current position -->
-    		<a role="button"><img src="assets/up.png"></a>
-
-
-    		<div id="page-intro">
     		<h1>Hi</h1>
-    		<h1>my name</h1>
-    		<h1>is</h1>
-    		<h1>cleo</h1>
+
+    		<div>
+    		<h3>Portfolio</h3>
     		</div>
-
-    		<div id="page-portfolio">
-	    		<h2>Portfolio</h2>
-	    		<?php while() { ?>
-	    			<a role="button" href="project.php?id=<?php echo($img['id']);?>"><img src="img/<?php echo($img['thumbnail']);?>"></a>
-	    		<?php }?>
-	    		<h2>Resume</h2>
-
-    		</div>
-
-    		<div id="page-contact">
-    			<h2>Contact</h2>
-    			<h3>About Me</h3>
-    			<img src="assets/cleo-lant.jpg">
-    			<p></p>
-    			<!-- social links -->
-    			<a role="button" href="mailto:lantc@sheridancollege.ca"><img src="assets/email.png"></a>
-    			<a role="button" href="tel:289-400-1859"><img src="icons/phone.png"></a>
-    			<a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
-    			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a>
-    		</div>
-
-
-    		<a role="button"><img src="assets/down.png"></a>
-    		<!-- JS on click even using this and current position -->
-    	
+    		
     	</div> <!-- end of container -->
     	</main>
     	<footer>
     		
     	</footer>
-    	<script type="text/javascript" src="jquery-3.3.1.js"></script>
     	<script type="text/javascript" src="script.js"></script>
     </body>
 </html>
