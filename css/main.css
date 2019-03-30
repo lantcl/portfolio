@@ -2,7 +2,6 @@
 
 
 html {font-size: 1.2em;
-	
 	}
 
 body {
@@ -17,9 +16,20 @@ body {
 	color: white;
 }
 
+.yellow{
+	color: #efad1c;
+}
+
 #no-bg{
 	background-color: transparent !important;
 }
+
+.navbar-menu{
+	background-color: #4a4a4a;
+	color: white;
+}
+
+
 
 h1{
 	font-size: 4.209em;
@@ -39,6 +49,15 @@ h1, h2, h3 {
 	font-weight: 700;
 }
 
-a{
+a, .navbar-item, .navbar-burger{
 	color: white;
+}
+
+a:visited{
+	color: white;
+}
+
+.navbar-burger:hover{
+	color: #efad1c;
+	background-color: transparent; 
 }

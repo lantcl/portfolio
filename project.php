@@ -11,12 +11,18 @@ $dbpassword = "NkXHus3h!6V";
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 $projects = $pdo->prepare("SELECT * FROM `projects` WHERE `id` = $id");
-$images = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id");
+$images1 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 1");
+$images2 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 2");
+$images3 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 3");
+$images4 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 4");
 
 $projects->execute();
 $project = $projects->fetch();
 
-$images->execute();
+$images1->execute();
+$images2->execute();
+$images3->execute();
+$images4->execute();
 
 //with JS if gallery id = $ add a class to sort the img types
 
@@ -32,10 +38,10 @@ $images->execute();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
         <!-- <link rel="shortcut icon" href="images/profile_icon.ico" type="image/x-icon" /> -->
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.com/libraries/bulma">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        <!-- <link rel="stylesheet" type="text/css" href="css/media-queries.css"> -->
         
         <!-- Open Graph Tags -->
 		<!-- for Google -->
@@ -101,11 +107,15 @@ $images->execute();
             <h3>Process</h3>
             <p><?php echo($project["projectProcess1"])?></p>  
 
-            <?php while($row = $projects->fetch()){ ?>
-                <img src="img/<?php echo($img['imgFile']);?>" href="<?php echo($img['id']);?>">
+            <?php while($row = $images4->fetch()){ ?>
+                <img src="img/<?php echo($row['imgFile']);?>" href="<?php echo($img['id']);?>">
             <?php }?>        
             
             <p><?php echo($project["projectProcess2"])?></p>
+
+            <?php while($row = $images3->fetch()){ ?>
+                <img src="img/<?php echo($row['imgFile']);?>" href="<?php echo($img['id']);?>">
+            <?php }?>
             
             <h3>Results</h3>
             <p><?php echo($project["projectResults"])?></p>

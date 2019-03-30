@@ -89,62 +89,81 @@ $projects->execute();
             </nav>
     	</header>
     	<main>
-    
+        <a name="page-top"></a>
         <section class="hero is-dark is-bold is-fullheight" id="page-intro">
             <div class="hero-body">
         	   <div class="container">
-        		  <h1>Hi!</h1>
-        		  <h1>my name</h1>
-        		  <h1>is</h1>
-                  <h1 class="white">cleo</h1>
-                <h3 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to</h3> >
-                <p>creative solutions</p>
-        </div></h3>
-                <a href="#page-portfolio"><h3 id="goTo-portfolio">Portfolio</h3></a>
-                <a class="nav-arrow"><i class="fas fa-chevron-down fa-2x" ></i></a> 
+        		  <h1 class="white">Hi,</h1>
+        		  <h1 class="white">my</h1>
+        		  <h1 class="white">name is</h1>
+                  <h1 >Cleo</h1>
+                <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <span class="yellow">creative solutions</span></h4>                
+            </div> 
             </div>
+            <div class="level">
+                    <div class="level-item is-marginless"><a href="#page-portfolio"><h4 id="goTo-portfolio" ">Portfolio</h4></a></div>
+                    <div class="level-item is-marginless"><a class="nav-arrow" href="#page-portfolio"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
+                </div>
             </div>
         </section>
         
-        <section class="section">
-    		<div class="container" id="page-portfolio">
-	    		<h2>Portfolio</h2>
-	    		<?php while($row = $projects->fetch()){ ?>
-                    <h4><?php echo($row["projectName"]) ?></h4>
-	    			<a role="button" href="project.php?id=<?php echo($row["id"]);?>"><img src="img/<?php echo($row["projectThumbnail"]);?>"></a>
-                    <span class="tag is-dark"><?php echo($row["tag1"]);?></span>
-                    <span class="tag is-dark"><?php echo($row["tag2"]);?></span>
-                    <span class="tag is-dark"><?php echo($row["tag3"]);?></span>
-	    		<?php }?>
-                <a class="nav-arrow"><i class="fas fa-chevron-down fa-2x" ></i></a> 
-    		</div>
-            <h3 id="goTo-resume">Resume</h3>
-        </section>
-
-        <section class="hero is-primary is-fullheight" id="page-resume">
+        <a name="page-portfolio"></a>
+        <section class="hero is-black is-fullheight"">
             <div class="hero-body">
                <div class="container">
-                    <a class="nav-arrow"><i class="fas fa-chevron-up fa-2x" ></i></a>
-                    <h2>Resume</h2>
-                    <p>sdgasgsdgsdgsdg</p>
-
-                    <h3 id="goTo-contact">Contact</h3>
+	    		<h2>Portfolio</h2>
+    	    		<?php while($row = $projects->fetch()){ ?>
+                        <h3><?php echo($row["projectName"]) ?></h3>
+    	    			<a role="button" href="project.php?id=<?php echo($row["id"]);?>">
+                            <img src="img/<?php echo($row["projectThumbnail"]);?>" class="image is-128x128">
+                        </a>
+                        <span class="tag is-dark"><?php echo($row["tag1"]);?></span>
+                        <span class="tag is-dark"><?php echo($row["tag2"]);?></span>
+                        <span class="tag is-dark"><?php echo($row["tag3"]);?></span>
+    	    		<?php }?>
+                    <div class="level ">
+                        <div class="level-item is-marginless"><a href="#page-resume"><h4 id="goTo-resume" ">Resume</h4></a></div>
+                        <div class="level-item is-marginless"><a class="nav-arrow" href="#page-resume"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-    		<div class="container" id="page-contact">
-    			<h2>Contact</h2>
-    			<h3>About Me</h3>
-    			<img src="assets/cleo-lant.jpg">
-    			<p></p>
-    			<!-- social links -->
-    			<a role="button" href="mailto:lantc@sheridancollege.ca"><img src="assets/email.png"></a>
-    			<a role="button" href="tel:289-400-1859"><img src="icons/phone.png"></a>
-    			<a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
-    			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a>
-    		</div>
+        <a name="page-resume"></a>
+        <section class="hero is-dark is-fullheight"">
+            <div class="hero-body">
+               <div class="container">
+                    <h2>Resume</h2>
+                    <p>sdgasgsdgsdgsdg</p>
+
+                    <div class="level ">
+                        <div class="level-item is-marginless"><a href="#page-contact"><h4 id="goTo-contact" ">Contact</h4></a></div>
+                        <div class="level-item is-marginless"><a class="nav-arrow" href="#page-contact"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a name="page-contact"></a>
+        <section class="hero is-dark is-bold is-fullheight"">
+            <div class="hero-body">
+               <div class="container">
+        			<h2>Contact</h2>
+        			<h3>About Me</h3>
+        			<img src="assets/cleo-lant.jpg">
+        			<p></p>
+        			<!-- social links -->
+        			<a role="button" href="mailto:lantc@sheridancollege.ca"><img src="assets/email.png"></a>
+        			<a role="button" href="tel:289-400-1859"><img src="icons/phone.png"></a>
+        			<a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
+        			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a>
+
+                    <div class="level">
+                        <div class="level-item is-marginless"><a href="#page-top"><h4 id="goTo-top" ">Top</h4></a></div>
+                        <div class="level-item is-marginless "><a class="nav-arrow" href="#page-top"><i class="fas fa-chevron-up fa-lg" ></i></a></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     		<a role="button"><img src="assets/down.png"></a>
