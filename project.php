@@ -1,6 +1,8 @@
 <?php
 
-$id = $_GET['id'];
+// $id = $_GET['id'];
+
+$id =1;
  
 $dsn = "mysql:host=localhost;dbname=lantc_portfolio;charset=utf8mb4";
 $dbusername = "lantc";
@@ -11,11 +13,10 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 $projects = $pdo->prepare("SELECT * FROM `projects` WHERE `id` = $id");
 $images = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id");
 
-$p = $projects->execute();
-$i = $images->execute();
+$projects->execute();
+$project = $projects->fetch();
 
-$projectName = $p['projectName'];
-$project = $p['projectName'];
+$images->execute();
 
 //with JS if gallery id = $ add a class to sort the img types
 
@@ -27,11 +28,11 @@ $project = $p['projectName'];
 
         <!-- NEED TO ADD FAVICONS -->
 
-        <title>Cleo Lant - Portfolio | <?php echo($projectName)?></title>
+        <title>Cleo Lant - Portfolio | <?php echo($project["projectName"])?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
         <!-- <link rel="shortcut icon" href="images/profile_icon.ico" type="image/x-icon" /> -->
-        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.com/libraries/bulma">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <!-- <link rel="stylesheet" type="text/css" href="css/media-queries.css"> -->
@@ -81,36 +82,43 @@ $project = $p['projectName'];
     		<nav></nav>
     	</header>
     	<main>
+        <section class="section">
     	<div class="container">
-    		<h1><?php echo($projectName)?></h1>
-
+    		<h1 class="title"><?php echo($project["projectName"])?></h1>
+            <p><?php echo($project["tag1"])?></p>
+            <p><?php echo($project["tag2"])?></p>
+            <p><?php echo($project["tag3"])?></p>
+            
+            <h4 class="subtitle"><?php echo($project["projectDescription"])?></h4>
+            <hr>
     		<div>
     		<h3>Concept</h3>
-            <p><?php echo($projectConcept)?></p>
+            <p><?php echo($project["projectConcept"])?></p>
             
             <h3>Research</h3>
-            <p><?php echo($projectResearch)?></p>
+            <p><?php echo($project["projectResearch"])?></p>
             
             <h3>Process</h3>
-            <p><?php echo($projectProcess1)?></p>  
+            <p><?php echo($project["projectProcess1"])?></p>  
 
-            <?php while() { ?>
+            <?php while($row = $projects->fetch()){ ?>
                 <img src="img/<?php echo($img['imgFile']);?>" href="<?php echo($img['id']);?>">
             <?php }?>        
             
-            <p><?php echo($projectProcess2)?></p>
+            <p><?php echo($project["projectProcess2"])?></p>
             
             <h3>Results</h3>
-            <p><?php echo($projectResults)?></p>
+            <p><?php echo($project["projectResults"])?></p>
     		
             </div>
     		
     	</div> <!-- end of container -->
+        </section>
     	</main>
     	<footer>
     		
     	</footer>
-        <script type="text/javascript" src="jquery-3.3.1.js"></script>
-    	<script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    	<script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>

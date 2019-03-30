@@ -1,0 +1,12 @@
+[30-Mar-2019 11:12:34 America/Toronto] PHP Parse error:  syntax error, unexpected ')' in /home2/lantc/public_html/portfolio/home.php on line 92
+[30-Mar-2019 11:13:12 America/Toronto] PHP Parse error:  syntax error, unexpected ')' in /home2/lantc/public_html/portfolio/project.php on line 97
+[30-Mar-2019 11:16:23 America/Toronto] PHP Parse error:  syntax error, unexpected ';' in /home2/lantc/public_html/portfolio/home.php on line 90
+[30-Mar-2019 11:20:51 America/Toronto] PHP Fatal error:  Call to a member function fetch() on boolean in /home2/lantc/public_html/portfolio/home.php on line 91
+[30-Mar-2019 11:20:53 America/Toronto] PHP Fatal error:  Call to a member function fetch() on boolean in /home2/lantc/public_html/portfolio/home.php on line 91
+[30-Mar-2019 11:21:00 America/Toronto] PHP Fatal error:  Call to a member function fetch() on boolean in /home2/lantc/public_html/portfolio/home.php on line 91
+[30-Mar-2019 11:22:00 America/Toronto] PHP Parse error:  syntax error, unexpected ';' in /home2/lantc/public_html/portfolio/home.php on line 91
+[30-Mar-2019 11:22:10 America/Toronto] PHP Fatal error:  Call to a member function fetch() on boolean in /home2/lantc/public_html/portfolio/home.php on line 91
+[30-Mar-2019 11:24:24 America/Toronto] PHP Fatal error:  Call to a member function fetch() on boolean in /home2/lantc/public_html/portfolio/home.php on line 91
+[30-Mar-2019 11:25:21 America/Toronto] PHP Fatal error:  Call to a member function fetch() on boolean in /home2/lantc/public_html/portfolio/home.php on line 91
+[30-Mar-2019 11:26:46 America/Toronto] PHP Fatal error:  Call to a member function fetch() on boolean in /home2/lantc/public_html/portfolio/home.php on line 90
+[30-Mar-2019 11:28:48 America/Toronto] PHP Parse error:  syntax error, unexpected ')' in /home2/lantc/public_html/portfolio/project.php on line 96

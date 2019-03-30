@@ -9,22 +9,23 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 $projects = $pdo->prepare("SELECT * FROM `projects`");
 $images = $pdo->prepare("SELECT * FROM `images` WHERE `featured`='1'");
 
-$p = $projects->execute();
-$backroundimages = $images->execute();
-
-$project = $p['projectName'];
+$projects->execute();
+//$backroundimages = $images->execute();
 
 ?>
 
 <!doctype html>
 <html>
-    <head>
+<!-- <html class="has-navbar-fixed-top">
+ -->    <head>
         <title>Cleo Lant - Visual Designer | Creative Problem-Solver</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
         <!-- <link rel="shortcut icon" href="images/profile_icon.ico" type="image/x-icon" /> -->
         
         <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <!-- <link rel="stylesheet" type="text/css" href="css/media-queries.css"> -->
         
@@ -69,34 +70,71 @@ $project = $p['projectName'];
 
     </head> 
     <body>
+    
     	<header>
-    		<nav>
-    			<!-- hamburger meun icon -->
-    		</nav>
+    		<nav id="no-bg" class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span></a>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">Portfolio</a>
+                        <a class="navbar-item">Resume</a>
+                        <a class="navbar-item">Contact</a>
+                    </div>
+                </div>
+            </nav>
     	</header>
     	<main>
-    	<div class="container">
-    		<!-- JS on click even using this and current position -->
-    		<a role="button"><img src="assets/up.png"></a>
-
-
-    		<div id="page-intro">
-    		<h1>Hi</h1>
-    		<h1>my name</h1>
-    		<h1>is</h1>
-    		<h1>cleo</h1>
-    		</div>
-
-    		<div id="page-portfolio">
+    
+        <section class="hero is-dark is-bold is-fullheight" id="page-intro">
+            <div class="hero-body">
+        	   <div class="container">
+        		  <h1>Hi!</h1>
+        		  <h1>my name</h1>
+        		  <h1>is</h1>
+                  <h1 class="white">cleo</h1>
+                <h3 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to</h3> >
+                <p>creative solutions</p>
+        </div></h3>
+                <a href="#page-portfolio"><h3 id="goTo-portfolio">Portfolio</h3></a>
+                <a class="nav-arrow"><i class="fas fa-chevron-down fa-2x" ></i></a> 
+            </div>
+            </div>
+        </section>
+        
+        <section class="section">
+    		<div class="container" id="page-portfolio">
 	    		<h2>Portfolio</h2>
-	    		<?php while() { ?>
-	    			<a role="button" href="project.php?id=<?php echo($img['id']);?>"><img src="img/<?php echo($img['thumbnail']);?>"></a>
+	    		<?php while($row = $projects->fetch()){ ?>
+                    <h4><?php echo($row["projectName"]) ?></h4>
+	    			<a role="button" href="project.php?id=<?php echo($row["id"]);?>"><img src="img/<?php echo($row["projectThumbnail"]);?>"></a>
+                    <span class="tag is-dark"><?php echo($row["tag1"]);?></span>
+                    <span class="tag is-dark"><?php echo($row["tag2"]);?></span>
+                    <span class="tag is-dark"><?php echo($row["tag3"]);?></span>
 	    		<?php }?>
-	    		<h2>Resume</h2>
-
+                <a class="nav-arrow"><i class="fas fa-chevron-down fa-2x" ></i></a> 
     		</div>
+            <h3 id="goTo-resume">Resume</h3>
+        </section>
 
-    		<div id="page-contact">
+        <section class="hero is-primary is-fullheight" id="page-resume">
+            <div class="hero-body">
+               <div class="container">
+                    <a class="nav-arrow"><i class="fas fa-chevron-up fa-2x" ></i></a>
+                    <h2>Resume</h2>
+                    <p>sdgasgsdgsdgsdg</p>
+
+                    <h3 id="goTo-contact">Contact</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+    		<div class="container" id="page-contact">
     			<h2>Contact</h2>
     			<h3>About Me</h3>
     			<img src="assets/cleo-lant.jpg">
@@ -107,17 +145,16 @@ $project = $p['projectName'];
     			<a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
     			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a>
     		</div>
-
+        </section>
 
     		<a role="button"><img src="assets/down.png"></a>
     		<!-- JS on click even using this and current position -->
-    	
-    	</div> <!-- end of container -->
     	</main>
+        </section>
     	<footer>
     		
     	</footer>
-    	<script type="text/javascript" src="jquery-3.3.1.js"></script>
-    	<script type="text/javascript" src="script.js"></script>
+    	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    	<script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>

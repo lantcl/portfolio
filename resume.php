@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
         <!-- <link rel="shortcut icon" href="images/profile_icon.ico" type="image/x-icon" /> -->
-        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.com/libraries/bulma">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <!-- <link rel="stylesheet" type="text/css" href="css/media-queries.css"> -->
@@ -77,6 +77,7 @@
     	<footer>
     		
     	</footer>
-    	<script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    	<script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>
