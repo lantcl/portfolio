@@ -1,6 +1,7 @@
 <?php
 
-$stickerName = $_POST['stickerName'];
+$stickerName = str_replace(' ', '_', $_POST['stickerName']);
+
 $giphyurl = $_POST['giphyurl'];
 //$stickerContributor = $_POST['stickerContributor'];
 if(!empty($_POST["stickerContributor"])) { 
@@ -9,7 +10,7 @@ if(!empty($_POST["stickerContributor"])) {
 	$stickerContributor = "anonymous";
 }
 
-$date = date("d-m-Y");
+$date = date("d m Y");
 
 $dsn = "mysql:host=localhost;dbname=lantc_portfolio;charset=utf8mb4";
 $dbusername = "lantc";

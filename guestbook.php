@@ -7,19 +7,18 @@ $dbusername = "lantc";
 $dbpassword = "NkXHus3h!6V";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
-$date = date("d-m-Y");
+$date = date("d m Y");
 
-echo($date);
-// $entries = $pdo->prepare("SELECT * FROM `guestbook` WHERE `stickerDate` = $date LIMIT 3;");
-// $entries->execute();
+$entries = $pdo->prepare("SELECT * FROM `guestbook` WHERE `stickerDate` = '$date'");
+$entries->execute();
 
 
-// $stickerRequest = file_get_contents('https://api.giphy.com/v1/stickers/random?api_key=xBFiRt8PTmOcWKrCeSWgtukA7ZPOy5xa&rating=PG&tag='.$guest);
-// $stickerResult = json_decode($stickerRequest, true);
-// // $sticker = $stickerResult["data"][0]["images"]["fixed_width_small"]["url"];
+$stickerRequest = file_get_contents('https://api.giphy.com/v1/stickers/random?api_key=xBFiRt8PTmOcWKrCeSWgtukA7ZPOy5xa&rating=PG&tag='.$guest);
+$stickerResult = json_decode($stickerRequest, true);
+// $sticker = $stickerResult["data"][0]["images"]["fixed_width_small"]["url"];
 
-// $sticker = $stickerResult["data"]["fixed_height_small_url"];
-//var_dump($sticker);
+$sticker = $stickerResult["data"]["fixed_height_small_url"];
+// var_dump($sticker);
 
 ?>
 
@@ -30,8 +29,9 @@ echo($date);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
         <!-- <link rel="shortcut icon" href="images/profile_icon.ico" type="image/x-icon" /> -->
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.com/libraries/bulma">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <!-- <link rel="stylesheet" type="text/css" href="css/media-queries.css"> -->
         
@@ -77,9 +77,23 @@ echo($date);
     </head> 
     <body>
     	<header>
-    		<nav></nav>
-    	</header>
-    	<main>
+            <nav id="no-bg" class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span></a>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">Portfolio</a>
+                        <a class="navbar-item">Resume</a>
+                        <a class="navbar-item">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
     	<section class="hero is-dark is-fullheight"">
             <div class="hero-body">
                <div class="container">
@@ -87,6 +101,7 @@ echo($date);
                     <h4>Add a sticker to this week's page</h4>
                     <h4>Every week I round up the submissions and use them as inspiration for a silly sketch</h4>
                     <h5>Check back on Fridays to see them!</h5>
+                    
                     <form action="add-sticker.php" method="post" id="guestbook_form">
                         <div>
                             <h4>Choose a sticker</h4>
@@ -94,13 +109,13 @@ echo($date);
                             <img src="<?php echo($sticker) ?>">
                             <input type="text" name="sticker" placeholder="drawing"/>
                             <button id="searchgif">Search</button>
-                            <button>Random</button>
+                            <button id="randomgif">Random</button>
                         </div>
                         <div>
                         <h4>Sign your name</h4>
                         <input type="text" name="stickerContributor">
                         <input type="submit" name="submit"/>
-                            </div>
+                        </div>
                     </form>
     	       </div> <!-- end of container -->
            </div>
@@ -108,14 +123,14 @@ echo($date);
        <section class="hero is-dark is-fullheight"">
             <div class="hero-body">
                <div class="container">
-                <h2>Recent Entries</h2>
+                <h2>Today's submissions</h2>
                 <?php while($row = $entries->fetch()){ ?>
                     <img src="<?php echo($row["giphyurl"]);?>">
-                    <p><?php echo($row["stickerContributor"]);?></p>
-                    <p><?php echo($row["stickerDate"]);?></p>
+                    <p><?php echo($row["stickerName"]);?></p>
+                    <p>submitted by: <?php echo($row["stickerContributor"]);?></p>
                 <?php } ?>
                 <h2>Last Week's Drawing!!!</h2>
-                <img src="">
+                <a><img src="#"></a>
                </div>
            </div>
        </section>
