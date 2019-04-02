@@ -108,7 +108,7 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
                             <h4>Choose a sticker</h4>
                             <!-- <label >Choose a sticker!</label> -->
                             <img id="currentSticker" src="<?php echo($sticker) ?>">
-                            <input type="text" name="sticker" placeholder="drawing"/>
+                            <input id="stickerinput" type="text" name="sticker" placeholder="drawing"/>
                             <button id="searchgif">Search</button>
                             <button id="randomgif">Random</button>
                         </div>

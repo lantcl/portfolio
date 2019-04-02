@@ -2,30 +2,25 @@ $(document).ready(function() {
   
   //AJAX/// api call to get the gif the user wants
 
-  $("#searchgif").on('click', function(){
-    var getSticker = $.ajax({
-      //make a request to the api with the user input
-      url : "get-sticker.php",
-      data : form_data,
-    });
+  //need to somehow return the value of current to use in the form submission maybe
+  $("#randomgif").on('click', function(){
     
-    getSticker.done(function(data){
-      $.post()
-    });  
-    getSticker.fail(function(data){
-      
-    });
-    getSticker.always(function(data){
-        
-    });
-    
+    var searchSticker = $.get("https://api.giphy.com/v1/stickers/random?api_key=xBFiRt8PTmOcWKrCeSWgtukA7ZPOy5xa&tag=&rating=PG");
+      searchSticker.done(function(data) {
+        //console.log(data["data"]["fixed_height_small_url"]);
+        var current = data["data"]["fixed_height_small_url"];
+        $("#currentSticker").attr("src", current);
+      }); 
+      searchSticker.fail(function(data){
+        console.log("fail");
+      });
   });
 
   //AJAX/// api call to get a random gif
 
   $("#randomgif").on('click', function(){
-    
-    var getRandomSticker = $.get("https://api.giphy.com/v1/stickers/random?api_key=xBFiRt8PTmOcWKrCeSWgtukA7ZPOy5xa&tag=&rating=PG");
+    var s = $('#stickerInput').val();
+    var getRandomSticker = $.get("https://api.giphy.com/v1/stickers/random?api_key=xBFiRt8PTmOcWKrCeSWgtukA7ZPOy5xa&rating=PG&tag="s);
       getRandomSticker.done(function(data) {
         //console.log(data["data"]["fixed_height_small_url"]);
         var current = data["data"]["fixed_height_small_url"];
