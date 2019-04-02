@@ -1,10 +1,25 @@
 <?php
 
-// $dsn = "mysql:host=localhost;dbname=lantc_portfolio;charset=utf8mb4";
-// $dbusername = "lantc";
-// $dbpassword = "NkXHus3h!6V";
+$guest = "drawing";
 
-// $pdo = new PDO($dsn, $dbusername, $dbpassword);
+$dsn = "mysql:host=localhost;dbname=lantc_portfolio;charset=utf8mb4";
+$dbusername = "lantc";
+$dbpassword = "NkXHus3h!6V";
+
+$pdo = new PDO($dsn, $dbusername, $dbpassword);
+$date = date("d-m-Y");
+
+echo($date);
+// $entries = $pdo->prepare("SELECT * FROM `guestbook` WHERE `stickerDate` = $date LIMIT 3;");
+// $entries->execute();
+
+
+// $stickerRequest = file_get_contents('https://api.giphy.com/v1/stickers/random?api_key=xBFiRt8PTmOcWKrCeSWgtukA7ZPOy5xa&rating=PG&tag='.$guest);
+// $stickerResult = json_decode($stickerRequest, true);
+// // $sticker = $stickerResult["data"][0]["images"]["fixed_width_small"]["url"];
+
+// $sticker = $stickerResult["data"]["fixed_height_small_url"];
+//var_dump($sticker);
 
 ?>
 
@@ -68,9 +83,40 @@
     	<section class="hero is-dark is-fullheight"">
             <div class="hero-body">
                <div class="container">
-                    <h2>Resume</h2>
-    		
+                    <h2>Guestbook</h2>
+                    <h4>Add a sticker to this week's page</h4>
+                    <h4>Every week I round up the submissions and use them as inspiration for a silly sketch</h4>
+                    <h5>Check back on Fridays to see them!</h5>
+                    <form action="add-sticker.php" method="post" id="guestbook_form">
+                        <div>
+                            <h4>Choose a sticker</h4>
+                            <!-- <label >Choose a sticker!</label> -->
+                            <img src="<?php echo($sticker) ?>">
+                            <input type="text" name="sticker" placeholder="drawing"/>
+                            <button id="searchgif">Search</button>
+                            <button>Random</button>
+                        </div>
+                        <div>
+                        <h4>Sign your name</h4>
+                        <input type="text" name="stickerContributor">
+                        <input type="submit" name="submit"/>
+                            </div>
+                    </form>
     	       </div> <!-- end of container -->
+           </div>
+       </section>
+       <section class="hero is-dark is-fullheight"">
+            <div class="hero-body">
+               <div class="container">
+                <h2>Recent Entries</h2>
+                <?php while($row = $entries->fetch()){ ?>
+                    <img src="<?php echo($row["giphyurl"]);?>">
+                    <p><?php echo($row["stickerContributor"]);?></p>
+                    <p><?php echo($row["stickerDate"]);?></p>
+                <?php } ?>
+                <h2>Last Week's Drawing!!!</h2>
+                <img src="">
+               </div>
            </div>
        </section>
     	</main>
@@ -79,5 +125,6 @@
     	</footer>
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     	<script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/guestbook.js"></script>
     </body>
 </html>
