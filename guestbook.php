@@ -86,9 +86,10 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item">Portfolio</a>
-                        <a class="navbar-item">Resume</a>
-                        <a class="navbar-item">Contact</a>
+                        <a href="home.php#page-portfolio" class="navbar-item">Portfolio</a>
+                        <a href="resume.php" class="navbar-item">Resume</a>
+                        <a href="home.php#page-contact" class="navbar-item">Contact</a>
+                        <a href="guestbook.php" class="navbar-item">Guestbook</a>
                     </div>
                 </div>
             </nav>
@@ -102,16 +103,17 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
                     <h4>Every week I round up the submissions and use them as inspiration for a silly sketch</h4>
                     <h5>Check back on Fridays to see them!</h5>
                     
-                    <form action="add-sticker.php" method="post" id="guestbook_form">
+                    
                         <div>
                             <h4>Choose a sticker</h4>
                             <!-- <label >Choose a sticker!</label> -->
-                            <img src="<?php echo($sticker) ?>">
+                            <img id="currentSticker" src="<?php echo($sticker) ?>">
                             <input type="text" name="sticker" placeholder="drawing"/>
                             <button id="searchgif">Search</button>
                             <button id="randomgif">Random</button>
                         </div>
                         <div>
+                        <form action="add-sticker.php" method="post" id="guestbook_form">
                         <h4>Sign your name</h4>
                         <input type="text" name="stickerContributor">
                         <input type="submit" name="submit"/>

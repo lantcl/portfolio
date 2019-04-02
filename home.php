@@ -89,9 +89,10 @@ $projects->execute();
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item">Portfolio</a>
-                        <a class="navbar-item">Resume</a>
-                        <a class="navbar-item">Contact</a>
+                        <a href="home.php#page-portfolio" class="navbar-item">Portfolio</a>
+                        <a href="resume.php" class="navbar-item">Resume</a>
+                        <a href="home.php#page-contact" class="navbar-item">Contact</a>
+                        <a href="guestbook.php" class="navbar-item">Guestbook</a>
                     </div>
                 </div>
             </nav>
