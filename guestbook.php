@@ -108,15 +108,18 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
                             <h4>Choose a sticker</h4>
                             <!-- <label >Choose a sticker!</label> -->
                             <img id="currentSticker" src="<?php echo($sticker) ?>">
-                            <input id="stickerinput" type="text" name="sticker" placeholder="drawing"/>
+                            <input id="stickerInput" type="text" name="stickerName"/>
                             <button id="searchgif">Search</button>
                             <button id="randomgif">Random</button>
                         </div>
                         <div>
                         <form action="add-sticker.php" method="post" id="guestbook_form">
                         <h4>Sign your name</h4>
-                        <input type="text" name="stickerContributor">
+                        <input id="who" type="text" name="stickerContributor">
+                        <!-- <input type="hidden" name="giphyurl"/>
+                        <input type="hidden" name="stickerName"/> -->
                         <input type="submit" name="submit"/>
+<!--                         <button id="signGuestbook">Submit</button> -->
                         </div>
                     </form>
     	       </div> <!-- end of container -->
