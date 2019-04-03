@@ -53,9 +53,14 @@ $(document).ready(function() {
       url: "add-sticker.php", 
       data: { giphyurl: gif, stickerName: sticker, stickerContributor: who },
       success: function(){
-      $("#guestbook_form").hide(); 
+      $("#guestbook_form").hide();
+      $("#stickerPage").prepend('<img src="'+ gif +'" />'); 
+      //also need to put image name and contributor name
+
       }
-    
+      
+       
+
     });
   
   });

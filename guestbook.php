@@ -127,7 +127,7 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
        </section>
        <section class="hero is-dark is-fullheight"">
             <div class="hero-body">
-               <div class="container">
+               <div class="container" id="stickerPage">
                 <h2>Today's submissions</h2>
                 <?php while($row = $entries->fetch()){ ?>
                     <img src="<?php echo($row["giphyurl"]);?>">
