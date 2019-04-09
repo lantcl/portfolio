@@ -112,11 +112,11 @@ $images4->execute();
             <?php }?>        
             
             <p><?php echo($project["projectProcess2"])?></p>
-
+            <div class="columns">
             <?php while($row = $images3->fetch()){ ?>
-                <img src="img/<?php echo($row['imgFile']);?>" href="<?php echo($img['id']);?>">
+                <div class="column"><img src="img/<?php echo($row['imgFile']);?>" href="<?php echo($img['id']);?>"></div>
             <?php }?>
-            
+            </div>
             <h3>Results</h3>
             <p><?php echo($project["projectResults"])?></p>
     		

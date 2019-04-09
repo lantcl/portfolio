@@ -175,16 +175,23 @@ $backroundimages = $images->execute();
         </section>
 
         <a name="page-resume"></a>
-        <section class="hero is-dark is-bold is-fullheight"">
+        <section class="hero is-dark is-bold is-large">
+            <div class="hero-head">
+                <div class="container">
+                <h2>Resume</h2>
+
+                <img class="bird-icon" src="assets/crow1.png">
+                </div>
+            </div>
             <div class="hero-body">
                <div class="container">
-                    <h2>Resume</h2>
-                    <img class="bird-icon" src="assets/crow1.png">
-
-                    <div class="level ">
-                        <div class="level-item is-marginless"><a href="#page-contact"><h4 id="goTo-contact" ">Contact</h4></a></div>
-                        <div class="level-item is-marginless"><a class="nav-arrow" href="#page-contact"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
-                    </div>
+                <p>sdfsdgsgdgfdg</p>
+                </div>
+            </div> 
+            <div class="hero-foot">
+                <div class="container">
+                <a href="#page-contact"><h4 id="goTo-contact">Contact</h4></a>
+                <a class="nav-arrow" href="#page-contact"><i class="fas fa-chevron-down fa-lg" ></i></a>
                 </div>
             </div>
         </section>
