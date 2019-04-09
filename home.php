@@ -123,19 +123,34 @@ $backroundimages = $images->execute();
             
         <a name="page-top"></a>
         
-        <div id="scene" style="background-color: black"><!-- start of parallax -->
+    <section class="hero is-fullheight blackbg" id="page-intro">
+        <div id="scene" class="blackbg"> <!-- start of parallax -->
           <div class="illustrated pulse-animation"><img src="assets/bg.jpg"></div>
           <div class="illustrated pulse-animation" data-limit-x="0" data-depth="0.1"><img src="assets/overlaybg.png"></div>
           <div id="particles-js">
            </div>
           <div class="illustrated" data-depth="0.1"><img src="assets/birds1.png"></div>
           <div class="illustrated" data-depth="0.2"><img src="assets/birds2.png"></div>
-          <div data-depth="0.3"><img src="assets/birds3.png"></div>
-
+          <div class="illustrated pulse-animation" data-depth="0.3"><img src="assets/birds3.png"></div>           
           <div><img src="assets/vignette.png"></div>
-        </div><!-- end of parallax -->
 
-        <section class="hero is-dark is-bold is-fullheight" id="page-intro">
+          <div class="hero-body"> 
+                <h1 class="white">Hi,</h1>
+                <h1 class="white">my</h1>
+                <h1 class="white">name is</h1>
+                <h1 >Cleo</h1>
+                
+            </div><!-- end of hero-body -->
+            
+            </div><!-- end of parallax --> 
+            <div class="container">                 
+            <div class="hero-foot">
+                <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <span class="yellow">creative solutions</span></h4>
+            </div>
+            </div> 
+        </section> <!-- end of intro section -->
+
+       <!--  <section class="hero is-dark is-bold is-fullheight" id="page-intro">
             <div class="hero-body">
         	   <div class="container">
         		  <h1 class="white">Hi,</h1>
@@ -143,17 +158,17 @@ $backroundimages = $images->execute();
         		  <h1 class="white">name is</h1>
                   <h1 >Cleo</h1>
                 <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <span class="yellow">creative solutions</span></h4>                      
-                </div> <!-- end of container -->
-            </div> <!-- end of hero-body -->
+                </div> 
+            </div> 
             <div class="level">
                     <div class="level-item is-marginless"><a href="#page-portfolio"><h4 id="goTo-portfolio" ">Portfolio</h4></a></div>
                     <div class="level-item is-marginless"><a class="nav-arrow" href="#page-portfolio"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
                 </div>
             </div>
-        </section> <!-- end of section -->
+        </section> --> <!-- end of section -->
 
         <a name="page-portfolio"></a>
-        <section class="hero is-black is-fullheight"">
+        <section class="hero blackbg is-fullheight"">
             <div class="hero-body">
                <div class="container">
 	    		<h2>Portfolio</h2>
