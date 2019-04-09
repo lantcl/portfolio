@@ -44,8 +44,9 @@ body {
 	background-color: black;
 }
 
-.hero-foot{
+.ontop-hack{
 	padding: 3rem 1.5rem;
+	position: absolute;
 }
 
 .white{

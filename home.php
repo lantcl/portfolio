@@ -133,21 +133,19 @@ $backroundimages = $images->execute();
           <div class="illustrated" data-depth="0.2"><img src="assets/birds2.png"></div>
           <div class="illustrated pulse-animation" data-depth="0.3"><img src="assets/birds3.png"></div>           
           <div><img src="assets/vignette.png"></div>
-
-          <div class="hero-body"> 
+            </div><!-- end of parallax --> 
+          
+          <div class="ontop-hack"> 
                 <h1 class="white">Hi,</h1>
                 <h1 class="white">my</h1>
                 <h1 class="white">name is</h1>
-                <h1 >Cleo</h1>
-                
-            </div><!-- end of hero-body -->
-            
-            </div><!-- end of parallax --> 
-            <div class="container">                 
-            <div class="hero-foot">
+                <h1>Cleo</h1>
+            <div class="column is-6">
                 <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <span class="yellow">creative solutions</span></h4>
-            </div>
-            </div> 
+            </div>    
+            </div><!-- end of hero-body -->
+                           
+             
         </section> <!-- end of intro section -->
 
        <!--  <section class="hero is-dark is-bold is-fullheight" id="page-intro">
