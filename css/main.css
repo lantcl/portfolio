@@ -12,6 +12,16 @@
   }
 }
 
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .3;
+	}
+}
+
+
 html {font-size: 1.2em;
 	}
 
@@ -66,7 +76,18 @@ body {
 	color: white;
 }
 
+.bird-icon-bot, .bird-icon{
+	max-width: 80px;
+	position: absolute;
+}
 
+.bird-icon{
+	transition: transform 1s;
+}
+.bird-icon:hover{
+	animation: fade 1s;
+	transform: translate(6px, 6px);
+}
 
 h1{
 	font-size: 4.209em;
@@ -79,9 +100,10 @@ h2 {
 
 h3 {
 	font-size: 1.777em;
+	color: white;
 }
 
-h1, h2, h3 {
+h1, h2{
 	color: #efad1c;
 	font-weight: 700;
 }

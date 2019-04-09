@@ -143,41 +143,28 @@ $backroundimages = $images->execute();
             <div class="column is-6">
                 <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <span class="yellow">creative solutions</span></h4>
             </div>    
-            </div><!-- end of hero-body -->
-                           
-             
+            </div><!-- end of on top hack -->
+                                       
         </section> <!-- end of intro section -->
 
-       <!--  <section class="hero is-dark is-bold is-fullheight" id="page-intro">
-            <div class="hero-body">
-        	   <div class="container">
-        		  <h1 class="white">Hi,</h1>
-        		  <h1 class="white">my</h1>
-        		  <h1 class="white">name is</h1>
-                  <h1 >Cleo</h1>
-                <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <span class="yellow">creative solutions</span></h4>                      
-                </div> 
-            </div> 
-            <div class="level">
-                    <div class="level-item is-marginless"><a href="#page-portfolio"><h4 id="goTo-portfolio" ">Portfolio</h4></a></div>
-                    <div class="level-item is-marginless"><a class="nav-arrow" href="#page-portfolio"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
-                </div>
-            </div>
-        </section> --> <!-- end of section -->
-
-        <a name="page-portfolio"></a>
+        <a name="page-portfolio"></a><img class="bird-icon" src="assets/yellowcrow1.png">
         <section class="hero blackbg is-fullheight"">
             <div class="hero-body">
                <div class="container">
+
 	    		<h2>Portfolio</h2>
+                
     	    		<?php while($row = $projects->fetch()){ ?>
+                        <div class="column">
                         <h3><?php echo($row["projectName"]) ?></h3>
     	    			<a role="button" href="project.php?id=<?php echo($row["id"]);?>">
                             <img src="img/<?php echo($row["projectThumbnail"]);?>" class="image is-128x128">
                         </a>
+                        <p><?php echo($row["projectDescription"]);?></p>
                         <span class="tag is-dark"><?php echo($row["tag1"]);?></span>
                         <span class="tag is-dark"><?php echo($row["tag2"]);?></span>
                         <span class="tag is-dark"><?php echo($row["tag3"]);?></span>
+                    </div>
     	    		<?php }?>
                     <div class="level ">
                         <div class="level-item is-marginless"><a href="#page-resume"><h4 id="goTo-resume" ">Resume</h4></a></div>
@@ -188,11 +175,11 @@ $backroundimages = $images->execute();
         </section>
 
         <a name="page-resume"></a>
-        <section class="hero is-dark is-fullheight"">
+        <section class="hero is-dark is-bold is-fullheight"">
             <div class="hero-body">
                <div class="container">
                     <h2>Resume</h2>
-                    <p>sdgasgsdgsdgsdg</p>
+                    <img class="bird-icon" src="assets/crow1.png">
 
                     <div class="level ">
                         <div class="level-item is-marginless"><a href="#page-contact"><h4 id="goTo-contact" ">Contact</h4></a></div>
@@ -206,20 +193,33 @@ $backroundimages = $images->execute();
         <section class="hero is-dark is-bold is-fullheight"">
             <div class="hero-body">
                <div class="container">
-        			<h2>Contact</h2>
-        			<h3>About Me</h3>
-        			<img src="assets/cleo-lant.jpg">
-        			<p></p>
-        
-                    <!-- social links -->
-
-        			<a role="button" href="mailto:lantc@sheridancollege.ca"><img src="assets/email.png"></a>
+        			<h2>Let's Chat!</h2>
+<!--         			<img src="assets/cleo-lant.jpg"> -->
+        			
+                    <div class="column">
+                        <img class="bird-icon-bot" src="assets/darkcrow2.png">
+                        <img class="bird-icon" src="assets/yellowcrow2.png">
+                        <a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
+                    </div>
+                    <div class="column">
+                        <img class="bird-icon-bot" src="assets/darkcrow3.png">
+                        <img class="bird-icon" src="assets/yellowcrow3.png">
+                        <a role="button" href="mailto:lantc@sheridancollege.ca">Email</a>
+                    </div>
+                    <div class="column">
+                        <img class="bird-icon-bot" src="assets/darkcrow1.png">
+                        <img class="bird-icon" src="assets/yellowcrow1.png">
+                        <a role="button" href="tel:289-400-1859">Call</a>
+                    </div>
+                    <h3>About Me</h3>
+                    <p>Hi, my name is Cleo. I design, paint, draw, animate, build, code, ideate and iterate my way to creative solutions. I also play Dungeons & Dragons and drink a lot of coffee. Visual Design is my passion. </p>
+        			<!-- <a role="button" href="mailto:lantc@sheridancollege.ca"><img src="assets/email.png"></a>
         			<a role="button" href="tel:289-400-1859"><img src="icons/phone.png"></a>
         			<a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
-        			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a>
+        			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a> -->
 
                     <div class="level">
-                        <div class="level-item is-marginless"><a href="#page-top"><h4 id="goTo-top" ">Top</h4></a></div>
+                        <div class="level-item is-marginless"><a href="#page-top"><h4 id="goTo-top">Top</h4></a></div>
                         <div class="level-item is-marginless "><a class="nav-arrow" href="#page-top"><i class="fas fa-chevron-up fa-lg" ></i></a></div>
                     </div>
                 </div>
