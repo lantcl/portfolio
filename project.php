@@ -1,8 +1,8 @@
 <?php
 
-// $id = $_GET['id'];
+$id = $_GET['id'];
 
-$id =1;
+// $id =1;
  
 $dsn = "mysql:host=localhost;dbname=lantc_portfolio;charset=utf8mb4";
 $dbusername = "lantc";
@@ -16,6 +16,12 @@ $images2 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `ga
 $images3 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 3");
 $images4 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 4");
 
+$featuredimg = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `featured` = 1");
+
+
+$others = $pdo->prepare("SELECT `projectName`, `id`, `projectThumbnail` FROM `projects`");
+$others->execute();
+
 $projects->execute();
 $project = $projects->fetch();
 
@@ -24,7 +30,9 @@ $images2->execute();
 $images3->execute();
 $images4->execute();
 
-//with JS if gallery id = $ add a class to sort the img types
+$featuredimg->execute();
+$featured = $featuredimg->fetch();
+
 
 ?>
 
@@ -85,43 +93,111 @@ $images4->execute();
     </head> 
     <body>
     	<header>
-    		<nav></nav>
-    	</header>
+            <nav id="no-bg" class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span></a>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a href="home.php#page-portfolio" class="navbar-item is-pulled-right">Home</a>
+                        <a href="resume.php" class="navbar-item is-pulled-right">Resume</a>
+                        <a href="home.php#page-contact" class="navbar-item is-pulled-right">Contact</a>
+                        <a href="guestbook.php" class="navbar-item is-pulled-right">Guestbook</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
     	<main>
         <section class="section">
     	<div class="container">
-    		<h1 class="title"><?php echo($project["projectName"])?></h1>
+    		<h1><?php echo($project["projectName"])?></h1>
+            <img class="bird-icon-bot" src="assets/darkcrow3.png">
+            <img class="bird-icon" src="assets/yellowcrow3.png">
             <p><?php echo($project["tag1"])?></p>
             <p><?php echo($project["tag2"])?></p>
             <p><?php echo($project["tag3"])?></p>
-            
-            <h4 class="subtitle"><?php echo($project["projectDescription"])?></h4>
+        
+            <h4><?php echo($project["projectDescription"])?></h4>
             <hr>
-    		<div>
-    		<h3>Concept</h3>
-            <p><?php echo($project["projectConcept"])?></p>
+    	<div class="tile is-ancestor">
+          <div class="tile is-vertical">
+            <div class="tile">
+              <div class="tile is-parent is-vertical">
+                <article class="tile is-child">
+                  <h2>Concept</h2>
+                  <p><?php echo($project["projectConcept"])?></p>
+                </article>
+                <article class="tile is-child">
+                  <h2>Research</h2>
+                    <p><?php echo($project["projectResearch"])?></p>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child">
+                    <img src="img/<?php echo($featured['imgFile']);?>">
+                </article>
+              </div>
+            </div>
+            <div class="tile is-parent">
+                <?php while($row = $images3->fetch()){ ?>
+                     <article class="tile is-child">
+                    <img src="img/<?php echo($row['imgFile']);?>">
+                </article>
+            <?php }?>
+              
+            </div>
+          </div>
+        </div>
             
-            <h3>Research</h3>
-            <p><?php echo($project["projectResearch"])?></p>
-            
-            <h3>Process</h3>
+            <h2>Process</h2>
             <p><?php echo($project["projectProcess1"])?></p>  
-
-            <?php while($row = $images4->fetch()){ ?>
-                <img src="img/<?php echo($row['imgFile']);?>" href="<?php echo($img['id']);?>">
-            <?php }?>        
             
-            <p><?php echo($project["projectProcess2"])?></p>
-            <div class="columns">
-            <?php while($row = $images3->fetch()){ ?>
-                <div class="column"><img src="img/<?php echo($row['imgFile']);?>" href="<?php echo($img['id']);?>"></div>
+            <div class="columns is-mobile">
+            <?php while($row = $images2->fetch()){ ?>
+                <div class="column is-half">
+                    <img src="img/<?php echo($row['imgFile']);?>">
+                </div>
             <?php }?>
             </div>
-            <h3>Results</h3>
+
+            <div class="columns is-tablet">  
+            <?php while($row = $images4->fetch()){ ?>
+                <div class="column is-one-quarter">
+                    <img src="img/<?php echo($row['imgFile']);?>">  
+                </div>
+            <?php }?>
+            </div>
+            <p><?php echo($project["projectProcess2"])?></p>
+            
+            <div class="columns is-mobile">
+            <?php while($row = $images3->fetch()){ ?>
+                <div class="column is-4">
+                    <img src="img/<?php echo($row['imgFile']);?>">
+                </div>
+            <?php }?>
+            </div>
+            
+            <div>
+            <h2>Results</h2>
             <p><?php echo($project["projectResults"])?></p>
     		
             </div>
-    		
+
+            <h3>Other Projects</h3>
+            <img class="bird-icon" src="assets/yellowcrow3.png">
+            <?php while($row = $others->fetch()){ 
+                if ($row["projectName"] != $project["projectName"]){ ?>
+                <a href="project.php?id=<?php echo($row["id"]);?>">
+                    <h4><?php echo($row["projectName"]);?></h4>
+                </a>
+                <a role="button" href="project.php?id=<?php echo($row["id"]);?>">
+                    <img src="img/<?php echo($row["projectThumbnail"]);?>" class="image is-128x128">
+                </a>
+            <?php } } ?>
+
     	</div> <!-- end of container -->
         </section>
     	</main>
