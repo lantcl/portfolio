@@ -12,11 +12,12 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 $projects = $pdo->prepare("SELECT * FROM `projects` WHERE `id` = $id");
 $images1 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 1");
-$images2 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 2");
+$images21 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 21");
 $images3 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 3");
-$images4 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 4");
+$images22 = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 22");
 
 $featuredimg = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `featured` = 1");
+$secondimg = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 2");
 
 
 $others = $pdo->prepare("SELECT `projectName`, `id`, `projectThumbnail` FROM `projects`");
@@ -26,13 +27,15 @@ $projects->execute();
 $project = $projects->fetch();
 
 $images1->execute();
-$images2->execute();
+$images21->execute();
 $images3->execute();
-$images4->execute();
+$images22->execute();
 
 $featuredimg->execute();
 $featured = $featuredimg->fetch();
 
+$secondimg->execute();
+$secondary = $secondimg->fetch();
 
 ?>
 
@@ -122,8 +125,10 @@ $featured = $featuredimg->fetch();
         
             <h4><?php echo($project["projectDescription"])?></h4>
             <hr>
-    	<div class="tile is-ancestor">
-          <div class="tile is-vertical">
+    	
+
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical">
             <div class="tile">
               <div class="tile is-parent is-vertical">
                 <article class="tile is-child">
@@ -142,49 +147,64 @@ $featured = $featuredimg->fetch();
               </div>
             </div>
             <div class="tile is-parent">
+            <article class="tile is-child">
+                <div class="columns is-mobile">  
                 <?php while($row = $images3->fetch()){ ?>
-                     <article class="tile is-child">
-                    <img src="img/<?php echo($row['imgFile']);?>">
-                </article>
-            <?php }?>
-              
+                    <div class="column">
+                        <img src="img/<?php echo($row['imgFile']);?>">  
+                    </div>
+                <?php }?>
+                </div>
+            </article>
             </div>
-          </div>
+            <div class="tile is-vertical">
+                <div class="tile">
+                    <div class="tile is-parent">
+                    <article class="tile is-child">
+                        <img src="img/<?php echo($secondary['imgFile']);?>">
+                    </article>
+                  </div>
+                  <div class="tile is-parent is-vertical">
+                    <article class="tile is-child">
+                      <h2>Process</h2>
+                      <p><?php echo($project["projectProcess1"])?></p>
+                    </article>
+                    <article class="tile is-child">
+                       <p><?php echo($project["projectProcess2"])?></p>
+                    </article>
+                  </div>
+                </div>
+            </div>
+            <article class="tile is-child columns is-mobile">
+            <?php while($row = $images21->fetch()){ ?>
+                <div class="column is-6"><img src="img/<?php echo($row['imgFile']);?>"></div>   
+            <?php }?> 
+            </article>
+            <article class="tile is-child columns is-mobile">
+            <?php while($row = $images22->fetch()){ ?>
+                <div class="column is-6"><img src="img/<?php echo($row['imgFile']);?>"></div>   
+            <?php }?> 
+            </article>
+            <div class="tile">
+                <div class="tile is-parent">
+                    <article class="tile is-child">
+                      <h2>Results</h2>
+                      <p><?php echo($project["projectResults"])?></p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <?php while($row = $images1->fetch()){ ?>
+                    <div class="column"><img src="img/<?php echo($row['imgFile']);?>"></div>
+                    <?php }?> 
+                </div>
+            </div>
         </div>
-            
-            <h2>Process</h2>
-            <p><?php echo($project["projectProcess1"])?></p>  
-            
-            <div class="columns is-mobile">
-            <?php while($row = $images2->fetch()){ ?>
-                <div class="column is-half">
-                    <img src="img/<?php echo($row['imgFile']);?>">
-                </div>
-            <?php }?>
-            </div>
+    </div>
 
-            <div class="columns is-tablet">  
-            <?php while($row = $images4->fetch()){ ?>
-                <div class="column is-one-quarter">
-                    <img src="img/<?php echo($row['imgFile']);?>">  
-                </div>
-            <?php }?>
-            </div>
-            <p><?php echo($project["projectProcess2"])?></p>
-            
-            <div class="columns is-mobile">
-            <?php while($row = $images3->fetch()){ ?>
-                <div class="column is-4">
-                    <img src="img/<?php echo($row['imgFile']);?>">
-                </div>
-            <?php }?>
-            </div>
-            
-            <div>
-            <h2>Results</h2>
-            <p><?php echo($project["projectResults"])?></p>
-    		
-            </div>
+
+
+
+        
 
             <h3>Other Projects</h3>
             <img class="bird-icon" src="assets/yellowcrow3.png">
