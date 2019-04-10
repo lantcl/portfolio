@@ -20,7 +20,7 @@ $featuredimg = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND
 $secondimg = $pdo->prepare("SELECT * FROM `images` WHERE `projectid` = $id AND `galleryid` = 2");
 
 
-$others = $pdo->prepare("SELECT `projectName`, `id`, `projectThumbnail` FROM `projects`");
+$others = $pdo->prepare("SELECT * FROM `projects`");
 $others->execute();
 
 $projects->execute();
@@ -105,8 +105,8 @@ $secondary = $secondimg->fetch();
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-start">
-                        <a href="home.php#page-portfolio" class="navbar-item is-pulled-right">Home</a>
-                        <a href="resume.php" class="navbar-item is-pulled-right">Resume</a>
+                        <a href="home.php" class="navbar-item is-pulled-right">Home</a>
+                        <a href="home.php#resume" class="navbar-item is-pulled-right">Resume</a>
                         <a href="home.php#page-contact" class="navbar-item is-pulled-right">Contact</a>
                         <a href="guestbook.php" class="navbar-item is-pulled-right">Guestbook</a>
                     </div>
@@ -115,17 +115,19 @@ $secondary = $secondimg->fetch();
         </header>
     	<main>
         <section class="section">
-    	<div class="container">
+    	<div class="container is-fluid">
+            
+            <section>
     		<h1><?php echo($project["projectName"])?></h1>
-            <img class="bird-icon-bot" src="assets/darkcrow3.png">
-            <img class="bird-icon" src="assets/yellowcrow3.png">
-            <p><?php echo($project["tag1"])?></p>
-            <p><?php echo($project["tag2"])?></p>
-            <p><?php echo($project["tag3"])?></p>
-        
-            <h4><?php echo($project["projectDescription"])?></h4>
+            <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow3.png"></div>
+            <div class="mt-1"><h5 class="is-italic"><?php echo($project["projectDescription"])?></h5></div>
+            <div class="mt-1">
+            <span class="tag is-dark"><?php echo($project["tag1"]);?></span>
+            <span class="tag is-dark"><?php echo($project["tag2"]);?></span>
+            <span class="tag is-dark"><?php echo($project["tag3"]);?></span>
+            </div>
             <hr>
-    	
+            </section> 	
 
     <div class="tile is-ancestor">
         <div class="tile is-vertical">
@@ -200,23 +202,32 @@ $secondary = $secondimg->fetch();
             </div>
         </div>
     </div>
-
-
-
-
-        
-
-            <h3>Other Projects</h3>
-            <img class="bird-icon" src="assets/yellowcrow3.png">
-            <?php while($row = $others->fetch()){ 
-                if ($row["projectName"] != $project["projectName"]){ ?>
-                <a href="project.php?id=<?php echo($row["id"]);?>">
-                    <h4><?php echo($row["projectName"]);?></h4>
-                </a>
+    <!-- <img class="bird-icon" src="assets/yellowcrow3.png"> -->
+    <h3>Other Projects</h3>
+    
+    <div class="columns">
+    <?php while($row = $others->fetch()){ 
+        if ($row["projectName"] != $project["projectName"]){ ?>
+        <div class="column is-half">
+            <div class="card">
                 <a role="button" href="project.php?id=<?php echo($row["id"]);?>">
-                    <img src="img/<?php echo($row["projectThumbnail"]);?>" class="image is-128x128">
+                    <div class="card-image">
+                    <figure class="image is-3by3">
+                        <img src="img/<?php echo($row["projectThumbnail"]);?>">
+                    </figure>
+                    </div>
                 </a>
-            <?php } } ?>
+                <div class="card-content">
+                    <h3 class="yellow"><?php echo($row["projectName"]);?></h3>
+                    <div class="content">
+                    
+                        <p><?php echo($row["projectDescription"]);?></p>
+                    </div>
+              </div>
+            </div>
+        </div>    
+    <?php } } ?>
+    </div>
 
     	</div> <!-- end of container -->
         </section>

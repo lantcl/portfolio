@@ -111,10 +111,10 @@ $backroundimages = $images->execute();
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-start">
-                        <a href="home.php#page-portfolio" class="navbar-item">Portfolio</a>
-                        <a href="resume.php" class="navbar-item">Resume</a>
-                        <a href="home.php#page-contact" class="navbar-item">Contact</a>
-                        <a href="guestbook.php" class="navbar-item">Guestbook</a>
+                        <a href="home.php#page-portfolio" class="navbar-item is-pulled-right">Portfolio</a>
+                        <a href="resume.php" class="navbar-item is-pulled-right">Resume</a>
+                        <a href="home.php#page-contact" class="navbar-item is-pulled-right">Contact</a>
+                        <a href="guestbook.php" class="navbar-item is-pulled-right">Guestbook</a>
                     </div>
                 </div>
             </nav>
@@ -136,12 +136,12 @@ $backroundimages = $images->execute();
             </div><!-- end of parallax --> 
           
           <div class="ontop-hack"> 
-                <h1 class="white">Hi,</h1>
-                <h1 class="white">my</h1>
-                <h1 class="white">name is</h1>
-                <h1>Cleo</h1>
-            <div class="column is-6">
-                <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <span class="yellow">creative solutions</span></h4>
+                <h1 class="white bigTitle">Hi,</h1>
+                <h1 class="white bigTitle">my</h1>
+                <h1 class="white bigTitle">name is</h1>
+                <h1 class="bigTitle">Cleo</h1>
+            <div class="column is-6 mt-fix">
+                <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <a href="#page-portfolio"><span class="yellow">creative solutions</span></a></h4>
             </div>    
             </div><!-- end of on top hack -->
                                        
@@ -154,18 +154,28 @@ $backroundimages = $images->execute();
 
 	    		<h2>Portfolio</h2>
                 
-    	    		<?php while($row = $projects->fetch()){ ?>
-                        <div class="column">
-                        <h3><?php echo($row["projectName"]) ?></h3>
-    	    			<a role="button" href="project.php?id=<?php echo($row["id"]);?>">
-                            <img src="img/<?php echo($row["projectThumbnail"]);?>" class="image is-128x128">
+            <div class="columns">
+            <?php while($row = $projects->fetch()){ ?>
+                <div class="column is-4">
+                    <div class="card">
+                        <a role="button" href="project.php?id=<?php echo($row["id"]);?>">
+                            <div class="card-image">
+                            <figure class="image is-3by3">
+                                <img src="img/<?php echo($row["projectThumbnail"]);?>">
+                            </figure>
+                            </div>
                         </a>
-                        <p><?php echo($row["projectDescription"]);?></p>
-                        <span class="tag is-dark"><?php echo($row["tag1"]);?></span>
-                        <span class="tag is-dark"><?php echo($row["tag2"]);?></span>
-                        <span class="tag is-dark"><?php echo($row["tag3"]);?></span>
+                        <div class="card-content">
+                            <h4><?php echo($row["projectName"]);?></h4>
+                            <div class="content">
+                            
+                                <p><?php echo($row["projectDescription"]);?></p>
+                            </div>
+                      </div>
                     </div>
-    	    		<?php }?>
+                </div>    
+            <?php } ?>
+            </div>
                     <div class="level ">
                         <div class="level-item is-marginless"><a href="#page-resume"><h4 id="goTo-resume" ">Resume</h4></a></div>
                         <div class="level-item is-marginless"><a class="nav-arrow" href="#page-resume"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
