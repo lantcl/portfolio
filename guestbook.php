@@ -25,7 +25,7 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
 <!doctype html>
 <html>
     <head>
-        <title>Cleo Lant - Portfolio | <?php echo($projectName)?></title>
+        <title>Cleo Lant - Portfolio | Guestbook</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
         <!-- <link rel="shortcut icon" href="images/profile_icon.ico" type="image/x-icon" /> -->
@@ -89,56 +89,103 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
                         <a href="home.php#page-portfolio" class="navbar-item">Portfolio</a>
                         <a href="resume.php" class="navbar-item">Resume</a>
                         <a href="home.php#page-contact" class="navbar-item">Contact</a>
-                        <a href="guestbook.php" class="navbar-item">Guestbook</a>
+                        <a href="home.php" class="navbar-item">Home</a>
                     </div>
                 </div>
             </nav>
         </header>
         <main>
-    	<section class="hero is-dark is-fullheight"">
-            <div class="hero-body">
-               <div class="container">
-                    <h2>Guestbook</h2>
-                    <h4>Add a sticker to this week's page</h4>
-                    <h4>Every week I round up the submissions and use them as inspiration for a silly sketch</h4>
-                    <h5>Check back on Fridays to see them!</h5>
-                    
-                    
-                        <div>
-                            <h4>Choose a sticker</h4>
-                            <!-- <label >Choose a sticker!</label> -->
-                            <img id="currentSticker" src="<?php echo($sticker) ?>">
-                            <input id="stickerInput" type="text" name="stickerName"/>
-                            <button id="searchgif">Search</button>
-                            <button id="randomgif">Random</button>
+        <section class="section">
+        <div class="container is-fluid">
+            <section>
+                <h1>Guestbook</h1>
+                <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow2.png"></div>
+                <div class="mt-1">
+                    <h5 class="is-italic">Sign my guestbook with a sticker!</h5>
+                </div>
+                <div class="mt-1">
+                    <h5 class="is-italic">Every week I pick 3 and use them as inspiration for a silly sketch</h5>
+                    <p>Check back on Fridays to see them!</p>
+                </div>
+                <hr>
+            </section>
+            <section class="inputTop">
+                <div id="submissionPart1" class="columns">
+                    <div class="column mt-1 is-5 submissionRemove">
+                        <h2 id="stickerTitle">Choose a Sticker</h2>
+                        <h5 id="stickerSubtitle">type a word</h5>
+                        <input class="input mt-1" id="stickerInput" type="text" name="stickerName"/>
+                        <div class="is-block mt-1">
+                            <button class="button is-light is-outlined" id="searchgif">Search</button>
+                            <button class="button is-dark" id="randomgif">Random</button>
                         </div>
-                        <div>
+                    </div>
+                    <div id="thanks" class="column mt-1 is-5">
+                        <h2>Thanks!</h2>
+                        <p>Check out other submissions below</p>
+                    </div>
+                    <div class="column">
+                        <img id="currentSticker" src="<?php echo($sticker) ?>">
+                    </div>
+                    
+                </div>
+                <div class="columns submissionRemove">
+                    <div class="column is-5 is-clearfix">
                         <form action="add-sticker.php" method="post" id="guestbook_form">
-                        <h4>Sign your name</h4>
-                        <input id="who" type="text" name="stickerContributor">
-                        <!-- <input type="hidden" name="giphyurl"/>
-                        <input type="hidden" name="stickerName"/> -->
-                        <input type="submit" name="submit"/>
-<!--                         <button id="signGuestbook">Submit</button> -->
-                        </div>
-                    </form>
-    	       </div> <!-- end of container -->
+                            <h5>Sign your name</h5>
+                            <input class="input mt-1" id="who" type="text" name="stickerContributor">
+                            <input type="submit" class="button is-warning is-outlined is-block mt-1 is-pulled-right" name="submit"/>
+                        </form>
+                    </div>
+                </div>
+            </section>  
            </div>
-       </section>
-       <section class="hero is-dark is-fullheight"">
+        </section>
+       <section class="hero is-dark is-bold">
             <div class="hero-body">
                <div class="container" id="stickerPage">
-                <h2>Today's submissions</h2>
+                <h2>Today's Submissions</h2>
+                <div class="columns mt-1">
                 <?php while($row = $entries->fetch()){ ?>
+                    <div class="column">
                     <img src="<?php echo($row["giphyurl"]);?>">
-                    <p><?php echo($row["stickerName"]);?></p>
+                    <h6><?php echo($row["stickerName"]);?></h6>
                     <p>submitted by: <?php echo($row["stickerContributor"]);?></p>
+                </div>
                 <?php } ?>
-                <h2>Last Week's Drawing!!!</h2>
-                <a><img src="#"></a>
-               </div>
+                </div>
+            </div>
            </div>
        </section>
+       <section class="section">
+            <div class="container is-fluid">
+                <div class="columns mt-1">
+                    <div class="column is-5">
+                    <h2>Last Week's Drawing</h2>
+                        <div class="mt-1">
+                            <span class="tag is-dark">alien</span>
+                            <span class="tag is-dark">burger</span>
+                            <span class="tag is-dark">vintage</span>
+                        </div>
+                        <div class="mt-1">
+                            <p>Who wants some Zork Meat? This one made me giggle to myself as I was drawing it. Vintage was a fun extra layer to add, and I've found a whole new inspiration source in illustrated product advertisements from the 50's. Keep the submissions coming!</p>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <div class="card">
+                        <a role="button" href="https://www.instagram.com/cleopleurodon/?hl=en">
+                            <div class="card-image">
+                            <figure class="image is-3by4">
+                                <img src="img/sketch1.jpg">
+                            </figure>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </section>
+        </div> <!-- end of container -->
     	</main>
     	<footer>
     		

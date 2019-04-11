@@ -49,6 +49,9 @@ body {
 
 
 /*CSS*/
+#thanks{
+	display: none;
+}
 
 .blackbg{
 	background-color: black;
@@ -57,6 +60,10 @@ body {
 .ontop-hack{
 	padding: 3rem 1.5rem;
 	position: absolute;
+}
+
+.inputTop{
+    z-index: 99;
 }
 
 .white{

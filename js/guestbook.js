@@ -29,6 +29,7 @@ $(document).ready(function() {
         //console.log(data["data"]["fixed_height_small_url"]);
         var current = data["data"]["fixed_height_small_url"];
         $("#currentSticker").attr("src", current);
+         $('#stickerInput').attr('value', 'random');
       }); 
       getRandomSticker.fail(function(data){
         console.log("fail");
@@ -53,9 +54,10 @@ $(document).ready(function() {
       url: "add-sticker.php", 
       data: { giphyurl: gif, stickerName: sticker, stickerContributor: who },
       success: function(){
-      $("#guestbook_form").hide();
-      $("#stickerPage").prepend('<img src="'+ gif +'" />'); 
-      //also need to put image name and contributor name
+      // $("#guestbook_form").hide();
+      $(".submissionRemove").remove();
+      $("#thanks").show(); 
+      //$("#stickerPage").prepend('<img src="'+ gif +'" />'); 
 
       }
       
