@@ -78,18 +78,12 @@ body {
 	opacity: .2;
 }
 
-#no-bg{
-	background-color: transparent !important;
-}
 
-.navbar-menu, .navbar-item, .card-content{
+.navbar-menu, .navbar-item, .card-content, .navbar-brand{
 	background-color: #0c0c0c;
 	color: white;
 }
 
-.navbar-link:hover{
-	color: black;
-}
 
 .bird-icon-bot, .bird-icon{
 	max-width: 80px;
@@ -158,6 +152,10 @@ a:visited{
 	color: white;
 }
 
+a.navbar-link.is-active {
+    color: #efad1c;
+  }
+  
 .navbar-burger:hover{
 	color: #efad1c;
 	background-color: transparent; 

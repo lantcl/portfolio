@@ -96,7 +96,7 @@ $secondary = $secondimg->fetch();
     </head> 
     <body>
     	<header>
-            <nav id="no-bg" class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
+            <nav class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
@@ -117,7 +117,7 @@ $secondary = $secondimg->fetch();
         <section class="section">
     	<div class="container is-fluid">
             
-            <section>
+            <section class="mt-1">
     		<h1><?php echo($project["projectName"])?></h1>
             <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow3.png"></div>
             <div class="mt-1"><h5 class="is-italic"><?php echo($project["projectDescription"])?></h5></div>

@@ -86,10 +86,10 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-start">
-                        <a href="home.php#page-portfolio" class="navbar-item">Portfolio</a>
-                        <a href="resume.php" class="navbar-item">Resume</a>
-                        <a href="home.php#page-contact" class="navbar-item">Contact</a>
-                        <a href="home.php" class="navbar-item">Home</a>
+                        <a href="home.php#page-portfolio" class="navbar-item is-pulled-right">Portfolio</a>
+                        <a href="resume.php" class="navbar-item is-pulled-right">Resume</a>
+                        <a href="home.php#page-contact" class="navbar-item is-pulled-right">Contact</a>
+                        <a href="home.php" class="navbar-item is-pulled-right">Home</a>
                     </div>
                 </div>
             </nav>
@@ -97,7 +97,7 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
         <main>
         <section class="section">
         <div class="container is-fluid">
-            <section>
+            <section class="mt-1">
                 <h1>Guestbook</h1>
                 <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow2.png"></div>
                 <div class="mt-1">

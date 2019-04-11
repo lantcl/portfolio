@@ -102,7 +102,7 @@ $backroundimages = $images->execute();
     <body>
     
     	<header>
-    		<nav id="no-bg" class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
+    		<nav class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
@@ -135,7 +135,7 @@ $backroundimages = $images->execute();
           <div><img src="assets/vignette.png"></div>
             </div><!-- end of parallax --> 
           
-          <div class="ontop-hack"> 
+          <div class="ontop-hack mt-1"> 
                 <h1 class="white bigTitle">Hi,</h1>
                 <h1 class="white bigTitle">my</h1>
                 <h1 class="white bigTitle">name is</h1>
@@ -147,14 +147,18 @@ $backroundimages = $images->execute();
                                        
         </section> <!-- end of intro section -->
 
-        <a name="page-portfolio"></a><img class="bird-icon" src="assets/yellowcrow1.png">
+        <a name="page-portfolio"></a>
         <section class="hero blackbg is-fullheight"">
             <div class="hero-body">
                <div class="container">
 
 	    		<h2>Portfolio</h2>
+                <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow3.png"></div>
+                <div class="mt-1">
+                    <h5 class="is-italic">See some of my recent projects below</h5>
+                </div>
                 
-            <div class="columns">
+            <div class="columns mt-1">
             <?php while($row = $projects->fetch()){ ?>
                 <div class="column is-4">
                     <div class="card">
@@ -186,18 +190,15 @@ $backroundimages = $images->execute();
 
         <a name="page-resume"></a>
         <section class="hero is-dark is-bold is-large">
-            <div class="hero-head">
+            <div class="hero-body">
                 <div class="container">
                 <h2>Resume</h2>
-
-                <img class="bird-icon" src="assets/crow1.png">
+                    <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow1.png"></div>
+                    <div class="mt-1">
+                        <h5 class="is-italic">Click download to save a PDF of my resume</h5>
+                    </div>
                 </div>
             </div>
-            <div class="hero-body">
-               <div class="container">
-                <p>sdfsdgsgdgfdg</p>
-                </div>
-            </div> 
             <div class="hero-foot">
                 <div class="container">
                 <a href="#page-contact"><h4 id="goTo-contact">Contact</h4></a>
