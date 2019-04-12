@@ -138,14 +138,14 @@ $projects->execute();
                 <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <a href="#page-portfolio"><span class="yellow">creative solutions</span></a></h4>
             </div>    
             </div><!-- end of on top hack -->
-<!--             <div class="container is-widescreen has-text-centered">
+            <div class="hero-foot container is-widescreen has-text-centered is-hidden-tablet">
                 <a href="#page-portfolio"><h4 id="goTo-portfolio">Portfolio</h4></a>
                 <a class="nav-arrow" href="#page-portfolio"><i class="fas fa-chevron-down fa-lg" ></i></a>
-            </div>   -->                 
+            </div>                   
         </section> <!-- end of intro section -->
 
         <a name="page-portfolio"></a>
-        <section class="hero blackbg is-fullheight"">
+        <section class="hero blackbg is-fullheight">
             <div class="hero-body">
                <div class="container">
 
@@ -178,7 +178,7 @@ $projects->execute();
             <?php } ?>
             </div></div>
             </div>
-                    <div class="hero-foot container is-widescreen has-text-centered mt-1">
+                    <div class="hero-foot container is-widescreen has-text-centered mt-1 is-hidden-tablet">
                         <a href="#page-resume"><h4 id="goTo-resume" ">Resume</h4></a>
                         <a class="nav-arrow" href="#page-resume"><i class="fas fa-chevron-down fa-lg" ></i></a>
                     </div>
@@ -186,7 +186,7 @@ $projects->execute();
         </section>
 
         <a name="page-resume"></a>
-        <section class="hero is-dark is-bold is-large">
+        <section class="hero is-dark is-bold is-fullheight">
             <div class="hero-body">
                 <div class="container">
                 <h2>Resume</h2>
@@ -197,7 +197,7 @@ $projects->execute();
                     <button class="button is-warning is-outlined is-block mt-1">Download</button>
             </div>
         </div>
-                <div class="hero-foot container is-widescreen has-text-centered mt-1">
+                <div class="hero-foot container is-widescreen has-text-centered mt-1 is-hidden-tablet">
                 <a href="#page-contact"><h4 id="goTo-contact">Contact</h4></a>
                 <a class="nav-arrow" href="#page-contact"><i class="fas fa-chevron-down fa-lg" ></i></a>
                 </div>
@@ -205,7 +205,7 @@ $projects->execute();
         </section>
 
         <a name="page-contact"></a>
-        <section class="hero is-dark is-bold is-large">
+        <section class="hero is-dark is-bold is-fullheight">
             <div class="hero-body">
                <div class="container">
         			<h2>Let's Chat!</h2>
