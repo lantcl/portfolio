@@ -205,7 +205,7 @@ $secondary = $secondimg->fetch();
     <!-- <img class="bird-icon" src="assets/yellowcrow3.png"> -->
     <h3>Other Projects</h3>
     
-    <div class="columns">
+    <div class="columns mt-1">
     <?php while($row = $others->fetch()){ 
         if ($row["projectName"] != $project["projectName"]){ ?>
         <div class="column is-half">

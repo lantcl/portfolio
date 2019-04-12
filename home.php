@@ -32,16 +32,10 @@ $dbpassword = "NkXHus3h!6V";
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 $projects = $pdo->prepare("SELECT * FROM `projects`");
-$images = $pdo->prepare("SELECT * FROM `images` WHERE `featured`='1'");
+// $images = $pdo->prepare("SELECT * FROM `images` WHERE `featured`='1'");
 
 $projects->execute();
-$backroundimages = $images->execute();
-// $stickerRequest = file_get_contents('https://api.giphy.com/v1/stickers/random?api_key=xBFiRt8PTmOcWKrCeSWgtukA7ZPOy5xa&rating=PG&tag='.$guest);
-// $stickerResult = json_decode($stickerRequest, true);
-// // $sticker = $stickerResult["data"][0]["images"]["fixed_width_small"]["url"];
-
-// $sticker = $stickerResult["data"]["fixed_height_small_url"];
-// //var_dump($sticker);
+// $backroundimages = $images->execute();
 ?>
 
 <!doctype html>
@@ -144,7 +138,10 @@ $backroundimages = $images->execute();
                 <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <a href="#page-portfolio"><span class="yellow">creative solutions</span></a></h4>
             </div>    
             </div><!-- end of on top hack -->
-                                       
+<!--             <div class="container is-widescreen has-text-centered">
+                <a href="#page-portfolio"><h4 id="goTo-portfolio">Portfolio</h4></a>
+                <a class="nav-arrow" href="#page-portfolio"><i class="fas fa-chevron-down fa-lg" ></i></a>
+            </div>   -->                 
         </section> <!-- end of intro section -->
 
         <a name="page-portfolio"></a>
@@ -179,13 +176,13 @@ $backroundimages = $images->execute();
                     </div>
                 </div>    
             <?php } ?>
+            </div></div>
             </div>
-                    <div class="level ">
-                        <div class="level-item is-marginless"><a href="#page-resume"><h4 id="goTo-resume" ">Resume</h4></a></div>
-                        <div class="level-item is-marginless"><a class="nav-arrow" href="#page-resume"><i class="fas fa-chevron-down fa-lg" ></i></a></div>
+                    <div class="hero-foot container is-widescreen has-text-centered mt-1">
+                        <a href="#page-resume"><h4 id="goTo-resume" ">Resume</h4></a>
+                        <a class="nav-arrow" href="#page-resume"><i class="fas fa-chevron-down fa-lg" ></i></a>
                     </div>
-                </div>
-            </div>
+                
         </section>
 
         <a name="page-resume"></a>
@@ -195,57 +192,72 @@ $backroundimages = $images->execute();
                 <h2>Resume</h2>
                     <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow1.png"></div>
                     <div class="mt-1">
-                        <h5 class="is-italic">Click download to save a PDF of my resume</h5>
+                        <h5 class="is-italic">View a PDF of my resume</h5>
                     </div>
-                </div>
+                    <button class="button is-warning is-outlined is-block mt-1">Download</button>
             </div>
-            <div class="hero-foot">
-                <div class="container">
+        </div>
+                <div class="hero-foot container is-widescreen has-text-centered mt-1">
                 <a href="#page-contact"><h4 id="goTo-contact">Contact</h4></a>
                 <a class="nav-arrow" href="#page-contact"><i class="fas fa-chevron-down fa-lg" ></i></a>
                 </div>
-            </div>
+            
         </section>
 
         <a name="page-contact"></a>
-        <section class="hero is-dark is-bold is-fullheight"">
+        <section class="hero is-dark is-bold is-large">
             <div class="hero-body">
                <div class="container">
         			<h2>Let's Chat!</h2>
-<!--         			<img src="assets/cleo-lant.jpg"> -->
-        			
+                    <!-- <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow2.png"></div> -->
+                    <div class="mt-1 column is-5 is-paddingless">
+        			<p>I am currently a student of the Interactive Media Management program at Sheridan College. I share my love of storytelling through illustration, motion-graphics, wire-frames, web-development and interactive media. See my full portfolio at <a href="https://www.mynameiscleo.com/"><span class="yellow">mynameiscleo.com</span></a></p>
+                    </div>
+                    <div class="columns is-mobile mt-fix has-text-centered">
+                        <div class="column">
+                            <a role="button" href="mailto:lantc@sheridancollege.ca"><h5 class="yellow">Email</h5></a>
+                        </div>
+                        <div class="column">
+                            <a role="button" href="https://www.mynameiscleo.com/" target="_blank"><h5 class="yellow">Portfolio</h5></a>
+                        </div>
+                        <div class="column">
+                            <a role="button" href="tel:289-400-1859"><h5 class="yellow">Call</h5></a>
+                        </div>
+                        <div class="column">
+                            <a role="button" href="https://www.linkedin.com/in/cleolant/" target="_blank"><h5 class="yellow">LinkedIn</h5></a>
+                        </div>
+                    </div>
+                    <div class="columns is-mobile">
+                    <div class="column">
+                        <img class="bird-icon-bot" src="assets/darkcrow3.png">
+                        <a href="mailto:lantc@sheridancollege.ca"><img class="bird-icon" src="assets/yellowcrow3.png"></a>
+                    </div>
                     <div class="column">
                         <img class="bird-icon-bot" src="assets/darkcrow2.png">
-                        <img class="bird-icon" src="assets/yellowcrow2.png">
-                        <a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
+                        <a href="https://www.mynameiscleo.com/" target="_blank"><img class="bird-icon" src="assets/yellowcrow2.png"></a>
                     </div>
                     <div class="column">
                         <img class="bird-icon-bot" src="assets/darkcrow3.png">
-                        <img class="bird-icon" src="assets/yellowcrow3.png">
-                        <a role="button" href="mailto:lantc@sheridancollege.ca">Email</a>
+                        <a href="tel:289-400-1859"><img class="bird-icon" src="assets/yellowcrow3.png"></a>
                     </div>
                     <div class="column">
-                        <img class="bird-icon-bot" src="assets/darkcrow1.png">
-                        <img class="bird-icon" src="assets/yellowcrow1.png">
-                        <a role="button" href="tel:289-400-1859">Call</a>
+                        <img class="bird-icon-bot" src="assets/darkcrow2.png">
+                        <a href="https://www.linkedin.com/in/cleolant/" target="_blank"><img class="bird-icon" src="assets/yellowcrow2.png"></a>
                     </div>
-                    <h3>About Me</h3>
-                    <p>Hi, my name is Cleo. I design, paint, draw, animate, build, code, ideate and iterate my way to creative solutions. I also play Dungeons & Dragons and drink a lot of coffee. Visual Design is my passion. </p>
+                    </div>
         			<!-- <a role="button" href="mailto:lantc@sheridancollege.ca"><img src="assets/email.png"></a>
         			<a role="button" href="tel:289-400-1859"><img src="icons/phone.png"></a>
         			<a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
         			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a> -->
-
-                    <div class="level">
-                        <div class="level-item is-marginless"><a href="#page-top"><h4 id="goTo-top">Top</h4></a></div>
-                        <div class="level-item is-marginless "><a class="nav-arrow" href="#page-top"><i class="fas fa-chevron-up fa-lg" ></i></a></div>
                     </div>
-                </div>
-            </div>
+                    </div>
+                    <div class="hero-foot container is-widescreen has-text-centered mt-1">
+                        <a href="#page-top"><h4 id="goTo-top">Top</h4></a>
+                        <a class="nav-arrow" href="#page-top"><i class="fas fa-chevron-up fa-lg" ></i></a>
+                    </div>
+                
         </section>
 
-    		<a role="button"><img src="assets/down.png"></a>
-    		<!-- JS on click even using this and current position -->
     	</main>
         </section>
     	<footer>
