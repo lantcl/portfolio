@@ -215,16 +215,16 @@ $projects->execute();
                     </div>
                     <div class="columns is-mobile mt-fix has-text-centered">
                         <div class="column">
-                            <a role="button" href="mailto:lantc@sheridancollege.ca"><h5 class="yellow">Email</h5></a>
+                            <a role="button" href="mailto:lantc@sheridancollege.ca"><h5>Email</h5><p class="is-hidden-mobile">cleolant@gmail.com</p></a>
                         </div>
                         <div class="column">
-                            <a role="button" href="https://www.mynameiscleo.com/" target="_blank"><h5 class="yellow">Portfolio</h5></a>
+                            <a role="button" href="https://www.mynameiscleo.com/" target="_blank"><h5>Portfolio</h5><p class="is-hidden-mobile">mynameiscleo.com</p></a>
                         </div>
                         <div class="column">
-                            <a role="button" href="tel:289-400-1859"><h5 class="yellow">Call</h5></a>
+                            <a role="button" href="tel:289-400-1859"><h5>Call</h5><p class="is-hidden-mobile">289-400-1923</p></a>
                         </div>
                         <div class="column">
-                            <a role="button" href="https://www.linkedin.com/in/cleolant/" target="_blank"><h5 class="yellow">LinkedIn</h5></a>
+                            <a role="button" href="https://www.linkedin.com/in/cleolant/" target="_blank"><h5>LinkedIn</h5><p class="is-hidden-mobile">Cleo Lant</p></a>
                         </div>
                     </div>
                     <div class="columns is-mobile">
