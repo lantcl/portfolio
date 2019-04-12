@@ -51,6 +51,8 @@ $projects->execute();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--         <link rel="stylesheet" href="jquery.fullPage.css" />
+ -->
         <!-- <link rel="stylesheet" type="text/css" href="css/media-queries.css"> -->
         
         <!-- Open Graph Tags -->
@@ -94,7 +96,7 @@ $projects->execute();
 
     </head> 
     <body>
-    
+    <div id="fullpage">
     	<header>
     		<nav class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
@@ -263,9 +265,10 @@ $projects->execute();
     	<footer>
     		
     	</footer>
-    	
+    	</div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+        <!-- <script src="fullPage.js"></script> -->
         <script type="text/javascript" src="js/parallax-setup.js"></script>
     	<script type="text/javascript" src="js/particles.js"></script>   	
         <script type="text/javascript" src="js/app.js"></script>

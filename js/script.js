@@ -13,4 +13,9 @@ $(document).ready(function() {
 			$(".navbar-burger").toggleClass("is-active");
 	    	$(".navbar-menu").toggleClass("is-active");
 	    });
+
+	// new fullpage('#fullpage', {
+	// 	anchors:['#page-resume','#page-contact']
+	// });
+
 });
