@@ -139,14 +139,14 @@ h1, h2{
 }
 
 .mt-fix{
-	margin-top: 5em;
+	margin-top: 4.5em;
 }
 .mt-1{
 	margin-top: 1em;
 }
 
 .bird-icon-bot, .bird-icon{
-	max-width: 80px;
+	max-width: 60px;
 	position: absolute;
 }
 

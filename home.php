@@ -114,7 +114,6 @@ $projects->execute();
 
     </head> 
     <body>
-    <div> <!-- id="fullpage" -->
     	<header>
     		<nav class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
@@ -147,7 +146,7 @@ $projects->execute();
           <div class="illustrated" data-depth="0.2"><img src="assets/birds2.png"></div>
           <div class="illustrated pulse-animation" data-depth="0.3"><img src="assets/birds3.png"></div>           
           <div><img src="assets/vignette.png"></div>
-            </div><!-- end of parallax --> 
+        </div><!-- end of parallax --> 
           
           <div class="ontop-hack mt-1"> 
                 <h1 class="white bigTitle">Hi,</h1>
@@ -234,44 +233,52 @@ $projects->execute();
                     <div class="mt-1 column is-5 is-paddingless">
         			<p>I am currently a student of the Interactive Media Management program at Sheridan College. I share my love of storytelling through illustration, motion-graphics, wire-frames, web-development and interactive media. See my full portfolio at <a href="https://www.mynameiscleo.com/"><span class="yellow">mynameiscleo.com</span></a></p>
                     </div>
-                    <div class="columns is-mobile mt-fix has-text-centered">
+                    <div class="columns is-mobile mt-fix is-mobile is-multiline is-centered">
                         <div class="column">
                             <a role="button" href="mailto:lantc@sheridancollege.ca"><h5>Email</h5><p class="is-hidden-mobile">cleolant@gmail.com</p></a>
+                            <img class="bird-icon-bot mt-1" src="assets/darkcrow3.png">
+                            <a href="mailto:lantc@sheridancollege.ca"><img class="bird-icon mt-1" src="assets/yellowcrow3.png"></a>
                         </div>
                         <div class="column">
                             <a role="button" href="https://www.mynameiscleo.com/" target="_blank"><h5>Portfolio</h5><p class="is-hidden-mobile">mynameiscleo.com</p></a>
+                            <img class="bird-icon-bot mt-1" src="assets/darkcrow2.png">
+                            <a href="https://www.mynameiscleo.com/" target="_blank"><img class="bird-icon mt-1" src="assets/yellowcrow2.png"></a>
                         </div>
                         <div class="column">
-                            <a role="button" href="tel:2894001859"><h5 class="is-hidden-mobile">Call</h5><p class="smallFix">(289)-400-1859</p></a>
+                            <a role="button" href="tel:2894001859"><h5>Call</h5><p class="is-hidden-mobile">(289)-400-1859</p></a>
+                            <img class="bird-icon-bot mt-1" src="assets/darkcrow3.png">
+                            <a href="tel:289-400-1859"><img class="bird-icon mt-1" src="assets/yellowcrow3.png"></a>
                         </div>
                         <div class="column">
                             <a role="button" href="https://www.linkedin.com/in/cleolant/" target="_blank"><h5>LinkedIn</h5><p class="is-hidden-mobile">Cleo Lant</p></a>
+                            <img class="bird-icon-bot mt-1" src="assets/darkcrow2.png">
+                            <a href="https://www.linkedin.com/in/cleolant/" target="_blank"><img class="bird-icon mt-1" src="assets/yellowcrow2.png"></a>
                         </div>
                     </div>
-                    <div class="columns is-mobile">
-                    <div class="column">
-                        <img class="bird-icon-bot" src="assets/darkcrow3.png">
-                        <a href="mailto:lantc@sheridancollege.ca"><img class="bird-icon" src="assets/yellowcrow3.png"></a>
-                    </div>
-                    <div class="column">
-                        <img class="bird-icon-bot" src="assets/darkcrow2.png">
-                        <a href="https://www.mynameiscleo.com/" target="_blank"><img class="bird-icon" src="assets/yellowcrow2.png"></a>
-                    </div>
-                    <div class="column">
-                        <img class="bird-icon-bot" src="assets/darkcrow3.png">
-                        <a href="tel:289-400-1859"><img class="bird-icon" src="assets/yellowcrow3.png"></a>
-                    </div>
-                    <div class="column">
-                        <img class="bird-icon-bot" src="assets/darkcrow2.png">
-                        <a href="https://www.linkedin.com/in/cleolant/" target="_blank"><img class="bird-icon" src="assets/yellowcrow2.png"></a>
-                    </div>
-                    </div>
+<!--                     <div class="columns columns is-mobile is-multiline is-centered">
+                        <div class="column">
+                            <img class="bird-icon-bot" src="assets/darkcrow3.png">
+                            <a href="mailto:lantc@sheridancollege.ca"><img class="bird-icon" src="assets/yellowcrow3.png"></a>
+                        </div>
+                        <div class="column">
+                            <img class="bird-icon-bot" src="assets/darkcrow2.png">
+                            <a href="https://www.mynameiscleo.com/" target="_blank"><img class="bird-icon" src="assets/yellowcrow2.png"></a>
+                        </div>
+                        <div class="column">
+                            <img class="bird-icon-bot" src="assets/darkcrow3.png">
+                            <a href="tel:289-400-1859"><img class="bird-icon" src="assets/yellowcrow3.png"></a>
+                        </div>
+                        <div class="column">
+                            <img class="bird-icon-bot" src="assets/darkcrow2.png">
+                            <a href="https://www.linkedin.com/in/cleolant/" target="_blank"><img class="bird-icon" src="assets/yellowcrow2.png"></a>
+                        </div>
+                    </div> -->
         			<!-- <a role="button" href="mailto:lantc@sheridancollege.ca"><img src="assets/email.png"></a>
         			<a role="button" href="tel:289-400-1859"><img src="icons/phone.png"></a>
         			<a role="button" href="https://www.mynameiscleo.com/">Portfolio</a>
         			<a role="button" href="https://www.linkedin.com/in/cleolant/">LinkedIn</a> -->
-                    </div>
-                    </div>
+                </div>
+                </div>
                     <div class="hero-foot container is-widescreen has-text-centered mt-1">
                         <a href="#page-top"><h4 id="goTo-top">Top</h4></a>
                         <a class="nav-arrow" href="#page-top"><i class="fas fa-chevron-up fa-lg" ></i></a>
@@ -280,11 +287,6 @@ $projects->execute();
         </section>
 
     	</main>
-        </section>
-    	<footer>
-    		
-    	</footer>
-    	</div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="js/parallax-setup.js"></script>
