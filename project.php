@@ -43,8 +43,6 @@ $secondary = $secondimg->fetch();
 <html>
     <head>
 
-        <!-- NEED TO ADD FAVICONS -->
-
         <title>Cleo Lant - Portfolio | <?php echo($project["projectName"])?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8"/>
@@ -53,7 +51,28 @@ $secondary = $secondimg->fetch();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        
+        <!-- ****** faviconit.com favicons ****** -->
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="assets/favicon/favicon.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="assets/favicon/favicon-192.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="assets/favicon/favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon/favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+        <link rel="apple-touch-icon" href="assets/favicon/favicon-57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/favicon-114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/favicon-72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/favicon-144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/favicon-60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/favicon-76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/favicon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon-180.png">
+        <meta name="msapplication-TileColor" content="#efad1c">
+        <meta name="msapplication-TileImage" content="assets/favicon/favicon-144.png">
+        <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+        <!-- ****** faviconit.com favicons ****** -->
         <!-- Open Graph Tags -->
 		<!-- for Google -->
 		<meta name="description" content="Cleo is currently a student of the Interactive Media Management program at Sheridan College. She shares her love of storytelling through illustration, motion-graphics, wire-frames, web-development and interactive media. See her portfolio at mynameiscleo.com" />

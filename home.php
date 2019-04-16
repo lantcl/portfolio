@@ -51,10 +51,28 @@ $projects->execute();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-<!--         <link rel="stylesheet" href="jquery.fullPage.css" />
- -->
-        <!-- <link rel="stylesheet" type="text/css" href="css/media-queries.css"> -->
-        
+        <!-- ****** faviconit.com favicons ****** -->
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="assets/favicon/favicon.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="assets/favicon/favicon-192.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="assets/favicon/favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon/favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+        <link rel="apple-touch-icon" href="assets/favicon/favicon-57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/favicon-114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/favicon-72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/favicon-144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/favicon-60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/favicon-76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/favicon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon-180.png">
+        <meta name="msapplication-TileColor" content="#efad1c">
+        <meta name="msapplication-TileImage" content="assets/favicon/favicon-144.png">
+        <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+        <!-- ****** faviconit.com favicons ****** -->
         <!-- Open Graph Tags -->
 		<!-- for Google -->
 		<meta name="description" content="Cleo is currently a student of the Interactive Media Management program at Sheridan College. She shares her love of storytelling through illustration, motion-graphics, wire-frames, web-development and interactive media. See her portfolio at mynameiscleo.com" />
@@ -96,7 +114,7 @@ $projects->execute();
 
     </head> 
     <body>
-    <div id="fullpage">
+    <div> <!-- id="fullpage" -->
     	<header>
     		<nav class="navbar is-fixed-top is-marginless" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
@@ -269,7 +287,6 @@ $projects->execute();
     	</div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-        <!-- <script src="fullPage.js"></script> -->
         <script type="text/javascript" src="js/parallax-setup.js"></script>
     	<script type="text/javascript" src="js/particles.js"></script>   	
         <script type="text/javascript" src="js/app.js"></script>
