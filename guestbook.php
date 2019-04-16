@@ -85,9 +85,9 @@ $sticker = $stickerResult["data"]["fixed_height_small_url"];
                 <span aria-hidden="true"></span></a>
                 </div>
                 <div class="navbar-menu">
-                    <div class="navbar-start">
+                    <div class="navbar-end">
                         <a href="home.php#page-portfolio" class="navbar-item is-pulled-right">Portfolio</a>
-                        <a href="resume.php" class="navbar-item is-pulled-right">Resume</a>
+                        <a href="home.php#page-resume" class="navbar-item is-pulled-right">Resume</a>
                         <a href="home.php#page-contact" class="navbar-item is-pulled-right">Contact</a>
                         <a href="home.php" class="navbar-item is-pulled-right">Home</a>
                     </div>

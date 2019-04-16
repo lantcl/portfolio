@@ -78,12 +78,20 @@ body {
 	opacity: .2;
 }
 
+.smallFix{
+	font-size: .8em;
+    margin-top: 5px;
+}
 
 .navbar-menu, .navbar-item, .card-content, .navbar-brand{
 	background-color: #0c0c0c;
 	color: white;
 }
 
+.navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover{
+	background-color: #0c0c0c;
+	color: #efad1c;
+}
 
 .bird-icon-bot, .bird-icon{
 	max-width: 80px;

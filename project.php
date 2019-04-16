@@ -104,9 +104,9 @@ $secondary = $secondimg->fetch();
                 <span aria-hidden="true"></span></a>
                 </div>
                 <div class="navbar-menu">
-                    <div class="navbar-start">
+                    <div class="navbar-end">
                         <a href="home.php" class="navbar-item is-pulled-right">Home</a>
-                        <a href="home.php#resume" class="navbar-item is-pulled-right">Resume</a>
+                        <a href="home.php#page-resume" class="navbar-item is-pulled-right">Resume</a>
                         <a href="home.php#page-contact" class="navbar-item is-pulled-right">Contact</a>
                         <a href="guestbook.php" class="navbar-item is-pulled-right">Guestbook</a>
                     </div>
@@ -120,8 +120,9 @@ $secondary = $secondimg->fetch();
             <section class="mt-1">
     		<h1><?php echo($project["projectName"])?></h1>
             <div class="is-overlay"><img class="image is-128x128 is-pulled-right decoration" src="assets/yellowcrow3.png"></div>
-            <div class="mt-1"><h5 class="is-italic"><?php echo($project["projectDescription"])?></h5></div>
+            <div class="mt-1"><h5 class="is-italic"><?php echo($project["projectDescription"])?></h5></div><p>(<?php echo($project["projectDate"]);?>)</p>
             <div class="mt-1">
+
             <span class="tag is-dark"><?php echo($project["tag1"]);?></span>
             <span class="tag is-dark"><?php echo($project["tag2"]);?></span>
             <span class="tag is-dark"><?php echo($project["tag3"]);?></span>
@@ -183,9 +184,10 @@ $secondary = $secondimg->fetch();
             <?php }?> 
             </article>
             <article class="tile is-child columns is-mobile">
-            <?php while($row = $images22->fetch()){ ?>
+            <?php while($row = $images22->fetch()){ 
+                if (isset($row['imgFile'])){ ?>
                 <div class="column is-6"><img src="img/<?php echo($row['imgFile']);?>"></div>   
-            <?php }?> 
+            <?php } }?> 
             </article>
             <div class="tile">
                 <div class="tile is-parent">

@@ -106,9 +106,9 @@ $projects->execute();
                 <span aria-hidden="true"></span></a>
                 </div>
                 <div class="navbar-menu">
-                    <div class="navbar-start">
+                    <div class="navbar-end">
                         <a href="home.php#page-portfolio" class="navbar-item is-pulled-right">Portfolio</a>
-                        <a href="resume.php" class="navbar-item is-pulled-right">Resume</a>
+                        <a href="home.php#page-resume" class="navbar-item is-pulled-right">Resume</a>
                         <a href="home.php#page-contact" class="navbar-item is-pulled-right">Contact</a>
                         <a href="guestbook.php" class="navbar-item is-pulled-right">Guestbook</a>
                     </div>
@@ -196,7 +196,8 @@ $projects->execute();
                     <div class="mt-1">
                         <h5 class="is-italic">View a PDF of my resume</h5>
                     </div>
-                    <button class="button is-warning is-outlined is-block mt-1">Download</button>
+                     <a class="button is-warning is-outlined mt-1" role="button" href="assets/cleo-lant-resume.pdf" target="_blank">View</a>
+                    <a class="button is-warning is-outlined mt-1" role="button" href="assets/cleo-lant-resume.pdf" download="cleo-lant-resume.pdf">Download</a>
             </div>
         </div>
                 <div class="hero-foot container is-widescreen has-text-centered mt-1 is-hidden-tablet">
@@ -223,7 +224,7 @@ $projects->execute();
                             <a role="button" href="https://www.mynameiscleo.com/" target="_blank"><h5>Portfolio</h5><p class="is-hidden-mobile">mynameiscleo.com</p></a>
                         </div>
                         <div class="column">
-                            <a role="button" href="tel:289-400-1859"><h5>Call</h5><p class="is-hidden-mobile">289-400-1923</p></a>
+                            <a role="button" href="tel:2894001859"><h5 class="is-hidden-mobile">Call</h5><p class="smallFix">(289)-400-1859</p></a>
                         </div>
                         <div class="column">
                             <a role="button" href="https://www.linkedin.com/in/cleolant/" target="_blank"><h5>LinkedIn</h5><p class="is-hidden-mobile">Cleo Lant</p></a>
