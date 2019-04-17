@@ -157,10 +157,10 @@ $projects->execute();
                 <h4 class="is-italic">I design, paint, draw, animate, build, code, ideate and iterate my way to <a href="#page-portfolio"><span class="yellow">creative solutions</span></a></h4>
             </div>    
             </div><!-- end of on top hack -->
-            <div class="hero-foot container is-widescreen has-text-centered is-hidden-tablet">
+<!--             <div class="hero-foot container is-widescreen has-text-centered is-hidden-tablet">
                 <a href="#page-portfolio"><h4 id="goTo-portfolio">Portfolio</h4></a>
                 <a class="nav-arrow" href="#page-portfolio"><i class="fas fa-chevron-down fa-lg" ></i></a>
-            </div>                   
+            </div>  -->                  
         </section> <!-- end of intro section -->
 
         <a name="page-portfolio"></a>
